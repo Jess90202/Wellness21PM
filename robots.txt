@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tusitio.github.io/wellness21pm/sitemap.xml
