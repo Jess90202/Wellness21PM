@@ -1,15 +1,20 @@
 :root {
-  --bg-body: #050816;
-  --bg-elevated: rgba(13, 18, 40, 0.92);
-  --bg-elevated-soft: rgba(16, 23, 56, 0.9);
-  --bg-alt: #070c1e;
-  --accent: #e4b85e;
-  --accent-soft: rgba(228, 184, 94, 0.18);
-  --accent-strong: #ffce6e;
-  --text-main: #f5f5ff;
-  --text-muted: #b9bed8;
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --shadow-soft: 0 22px 70px rgba(0, 0, 0, 0.7);
+  /* PALETA NUEVA – SPA / WELLNESS */
+  --bg-body: #f5f2ec;                            /* Fondo general cálido y muy claro */
+  --bg-elevated: rgba(255, 255, 255, 0.98);      /* Tarjetas principales */
+  --bg-elevated-soft: rgba(255, 255, 255, 0.94); /* Tarjetas suaves / overlays */
+  --bg-alt: #f9f4ee;                             /* Secciones alternas */
+
+  --accent: #5aa08f;                             /* Verde eucalipto (color de marca) */
+  --accent-soft: rgba(90, 160, 143, 0.12);       /* Detalles suaves en chips / fondos */
+  --accent-strong: #2f7664;                      /* Versión más intensa del acento */
+
+  --text-main: #1f2933;                          /* Texto principal en gris oscuro */
+  --text-muted: #6b7280;                         /* Texto secundario */
+
+  --border-subtle: rgba(15, 23, 42, 0.08);       /* Borde ligero tipo tarjeta */
+  --shadow-soft: 0 18px 48px rgba(15, 23, 42, 0.18);
+
   --radius-lg: 1.5rem;
   --radius-md: 1rem;
   --radius-pill: 999px;
@@ -30,10 +35,10 @@ html, body {
 body {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top left, #202061 0, transparent 52%),
-    radial-gradient(circle at top right, #57214b 0, transparent 55%),
-    radial-gradient(circle at bottom, #082827 0, transparent 60%),
-    #050816;
+    radial-gradient(circle at top left, #ffe8d6 0, transparent 52%),
+    radial-gradient(circle at top right, #e5f4ea 0, transparent 55%),
+    radial-gradient(circle at bottom, #f9ece4 0, transparent 60%),
+    var(--bg-body);
   color: var(--text-main);
   min-height: 100vh;
 }
@@ -60,8 +65,12 @@ a {
 }
 
 .section-alt {
-  background: linear-gradient(180deg, rgba(7, 12, 30, 0.96), rgba(5, 8, 22, 0.98));
-  backdrop-filter: blur(18px);
+  background: linear-gradient(
+    180deg,
+    rgba(249, 244, 238, 0.98),
+    rgba(245, 242, 236, 1)
+  );
+  backdrop-filter: blur(14px);
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
 }
@@ -103,8 +112,12 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: linear-gradient(to bottom, rgba(5, 8, 22, 0.96), rgba(5, 8, 22, 0.92));
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 242, 236, 0.96),
+    rgba(245, 242, 236, 0.9)
+  );
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
   backdrop-filter: blur(18px);
 }
 
