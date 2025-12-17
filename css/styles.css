@@ -1,20 +1,21 @@
 :root {
-  --bg-body: #050816;
-  --bg-elevated: rgba(13, 18, 40, 0.92);
-  --bg-elevated-soft: rgba(16, 23, 56, 0.9);
-  --bg-alt: #070c1e;
-  --accent: #e4b85e;
-  --accent-soft: rgba(228, 184, 94, 0.18);
-  --accent-strong: #ffce6e;
-  --text-main: #f5f5ff;
-  --text-muted: #b9bed8;
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --shadow-soft: 0 22px 70px rgba(0, 0, 0, 0.7);
+  --bg-body: #FDE5D2;
+  --bg-elevated: #FFFFFF;
+  --bg-elevated-soft: #FFF7F3;
+  --bg-alt: #FFF1E8;
+  --accent: #C9A86A;
+  --accent-soft: rgba(201, 168, 106, 0.18);
+  --accent-strong: #E4C68A;
+  --text-main: #3C332B;
+  --text-muted: #7D6F64;
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --shadow-soft: 0 24px 60px rgba(15, 5, 0, 0.16);
   --radius-lg: 1.5rem;
   --radius-md: 1rem;
   --radius-pill: 999px;
   --transition-fast: 0.18s ease-out;
 }
+
 
 *,
 *::before,
@@ -30,12 +31,18 @@ html, body {
 body {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top left, #202061 0, transparent 52%),
-    radial-gradient(circle at top right, #57214b 0, transparent 55%),
-    radial-gradient(circle at bottom, #082827 0, transparent 60%),
-    #050816;
+    radial-gradient(circle at top left, #FDE0D0 0, transparent 55%),
+    radial-gradient(circle at bottom right, #F3E6FF 0, transparent 55%),
+    #FDE5D2;
   color: var(--text-main);
   min-height: 100vh;
+}
+
+
+h1, h2, h3, h4 {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-weight: 600;
+  color: var(--text-main);
 }
 
 img {
@@ -56,15 +63,17 @@ a {
 }
 
 .section {
-  padding: 5.5rem 0 4.8rem;
+  padding: 4.6rem 0 4.2rem;
 }
 
+
 .section-alt {
-  background: linear-gradient(180deg, rgba(7, 12, 30, 0.96), rgba(5, 8, 22, 0.98));
-  backdrop-filter: blur(18px);
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
+
 
 .section-head {
   max-width: 640px;
@@ -84,10 +93,11 @@ a {
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.75rem;
-  color: var(--accent-strong);
-  margin-bottom: 0.35rem;
+  letter-spacing: 0.18em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #e1b864;
+  margin-bottom: 0.9rem;
 }
 
 .two-col {
@@ -100,13 +110,13 @@ a {
 /* HEADER */
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: linear-gradient(to bottom, rgba(5, 8, 22, 0.96), rgba(5, 8, 22, 0.92));
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(18px);
+  position: relative;
+  z-index: 20;
+  background: transparent;
+  border-bottom: none;
+  padding-top: 1.4rem;
 }
+
 
 .site-header .shell {
   display: flex;
@@ -202,7 +212,7 @@ a {
   height: 40px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.24);
-  background: rgba(9, 14, 35, 0.9);
+  background: rgba(61, 41, 32, 0.96);
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -214,22 +224,29 @@ a {
   display: block;
   width: 18px;
   height: 2px;
-  background: #f9f9ff;
+  background: #3C332B;
   border-radius: 999px;
 }
+
 
 /* HERO */
 
 .hero {
-  padding-top: 5.5rem;
+  padding: 4.6rem 0 4.2rem;
 }
+
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1.1fr);
   gap: 3rem;
   align-items: center;
+  background: #ffffff;
+  border-radius: 1.8rem;
+  box-shadow: var(--shadow-soft);
+  padding: 2.7rem 3rem;
 }
+
 
 .hero-copy h1 {
   font-size: clamp(2.2rem, 3vw, 2.8rem);
@@ -281,13 +298,15 @@ a {
 }
 
 .hero-card-inner {
-  background: radial-gradient(circle at top, rgba(255, 206, 110, 0.15), transparent 60%),
-              var(--bg-elevated);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-subtle);
+  background: radial-gradient(circle at top left, rgba(244, 223, 209, 0.7), transparent 60%),
+              radial-gradient(circle at bottom right, rgba(233, 221, 255, 0.7), transparent 55%),
+              #ffffff;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
   padding: 1.8rem 1.6rem 1.7rem;
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 24px 60px rgba(15, 5, 0, 0.14);
 }
+
 
 .hero-card-kicker {
   text-transform: uppercase;
@@ -360,26 +379,30 @@ a {
 }
 
 .btn-primary {
-  background: linear-gradient(120deg, #25d366, #1ba851);
-  border-color: rgba(0, 0, 0, 0.7);
-  color: #041608;
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(120deg, #C9A86A, #E4C68A);
+  border-color: rgba(201, 168, 106, 0.9);
+  color: #3C332B;
+  box-shadow: 0 18px 35px rgba(15, 5, 0, 0.18);
 }
+
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 22px 44px rgba(15, 5, 0, 0.24);
 }
 
+
 .btn-ghost {
-  border-color: rgba(255, 255, 255, 0.18);
-  background: rgba(8, 11, 29, 0.9);
+  border-color: rgba(201, 168, 106, 0.55);
+  background: transparent;
   color: var(--text-main);
 }
 
+
 .btn-ghost:hover {
-  background: rgba(14, 19, 44, 0.95);
+  background: rgba(255, 248, 239, 0.95);
 }
+
 
 .btn-full {
   width: 100%;
@@ -430,14 +453,15 @@ a {
 }
 
 .service-card {
-  background: var(--bg-elevated);
-  border-radius: var(--radius-md);
-  padding: 1.25rem 1.15rem 1.1rem;
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
-  font-size: 0.88rem;
+  background: #ffffff;
+  border-radius: 1.1rem;
+  padding: 1.4rem 1.3rem 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 18px 40px rgba(15, 5, 0, 0.12);
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
+
 
 .service-card h3 {
   font-size: 0.98rem;
@@ -664,11 +688,11 @@ a {
 /* FOOTER */
 
 .site-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  background: radial-gradient(circle at top, rgba(220, 186, 110, 0.08), transparent 55%),
-              #050816;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.9);
   padding: 1.6rem 0 1.8rem;
 }
+
 
 .footer-grid {
   display: flex;
@@ -778,5 +802,1574 @@ a {
 
   .pricing-card {
     padding-inline: 1.1rem;
+  }
+}
+
+
+/* Logo in header */
+.brand-logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+/* Hover effects for main cards (incl. servicios) */
+.hero-card-inner,
+.highlight-card,
+.pricing-card,
+.faq-item,
+.service-card {
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              border-color 0.2s ease,
+              background 0.2s ease;
+}
+
+.hero-card-inner:hover,
+.highlight-card:hover,
+.pricing-card:hover,
+.faq-item:hover,
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+  border-color: rgba(255, 206, 110, 0.6);
+  background:
+    radial-gradient(circle at top, rgba(255, 206, 110, 0.16), transparent 55%),
+    var(--bg-elevated-soft);
+}
+
+/* Ubicación centrada */
+#ubicacion .shell {
+  text-align: center;
+}
+
+#ubicacion .shell > div {
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+#ubicacion .check-list {
+  display: inline-block;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+/* Estilo de iconos wellness – lineal dorado suave */
+.hero-list i,
+.check-list i,
+.contact-info i,
+.hero-badge i {
+  color: var(--accent-strong);
+  margin-right: 0.45rem;
+  font-size: 0.95rem;
+}
+
+/* CONTACTO – integrar mejor texto y formulario */
+.section.section-alt {
+  background:
+    radial-gradient(circle at top left, rgba(255, 206, 110, 0.06), transparent 55%),
+    var(--bg-alt);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1.1fr);
+  gap: 2.6rem;
+  align-items: flex-start;
+}
+
+/* Tarjeta de formulario más compacta */
+.contact-card {
+  background:
+    radial-gradient(circle at top, rgba(255, 206, 110, 0.08), transparent 60%),
+    var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 206, 110, 0.35);
+  padding: 1.5rem 1.4rem 1rem;
+  box-shadow: var(--shadow-soft);
+  font-size: 0.9rem;
+}
+
+.contact-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.85rem;
+}
+
+.contact-card textarea {
+  min-height: 90px;
+}
+
+.form-footnote {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+}
+
+/* Layout interno en columnas para el formulario */
+.form-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 1.4rem;
+}
+
+.form-cols input[type="hidden"] {
+  grid-column: span 2;
+}
+
+.form-cols label,
+.form-cols input,
+.form-cols select {
+  width: 100%;
+}
+
+.form-cols textarea {
+  grid-column: span 2;
+}
+
+.form-cols button,
+.form-cols .form-footnote {
+  grid-column: span 2;
+}
+
+/* Texto justificado en toda la página (contenido principal) */
+main p,
+main li {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Responsive ajustes contacto */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.8rem;
+  }
+
+  .contact-card {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #contacto.section {
+    padding-top: 2.1rem;
+    padding-bottom: 2.4rem;
+  }
+
+  .contact-card {
+    padding: 1.3rem 1.1rem 0.9rem;
+    border-radius: 1.25rem;
+  }
+
+  .contact-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .form-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem 1.1rem;
+  }
+
+  .form-footnote {
+    font-size: 0.72rem;
+  }
+
+  .contact-card textarea {
+    min-height: 84px;
+    font-size: 0.85rem;
+  }
+}
+
+
+
+/* === Overrides para layout tipo SPA card === */
+.section-alt {
+  background: transparent;
+  border-top: none;
+  border-bottom: none;
+}
+
+.section-alt .shell.two-col {
+  background: var(--bg-elevated);
+  border-radius: 1.8rem;
+  box-shadow: var(--shadow-soft);
+  padding: 2.5rem 2.6rem;
+}
+
+/* Tarjetas internas tipo card blanca */
+.highlight-card,
+.info-card,
+.pricing-card,
+.benefit-card {
+  background: var(--bg-elevated-soft);
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 40px rgba(15, 5, 0, 0.12);
+}
+
+/* Layout responsivo: una sola columna en móvil */
+@media (max-width: 880px) {
+  .hero-grid,
+  .two-col {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .section-alt .shell.two-col {
+    padding: 2.1rem 1.7rem;
+  }
+
+  .highlight-card {
+    margin-top: 1.9rem;
+  }
+
+  .section {
+    padding: 3.6rem 0 3.1rem;
+  }
+}
+
+
+/* Imagenes de servicios debajo del título */
+.service-image-bottom {
+  margin-top: 0.75rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-height: 220px;
+}
+.service-image-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* FORMULARIO – Campos blancos y texto legible */
+.contact-card input,
+.contact-card select,
+.contact-card textarea {
+  background: #FFFFFF !important;
+  color: #333333 !important;
+  border: 1px solid #D4D4D4 !important;
+  border-radius: 0.8rem;
+}
+
+/* Estilo del placeholder */
+.contact-card input::placeholder,
+.contact-card textarea::placeholder {
+  color: #888888 !important;
+}
+
+
+/* ============ CHAT IA WELLNESS 21PM ============ */
+
+.ai-chat-widget {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 999;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.ai-chat-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(135deg, #f97316, #ec4899);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.ai-chat-toggle i {
+  font-size: 1rem;
+}
+
+.ai-chat-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.ai-chat-window {
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  width: min(360px, 90vw);
+  max-height: min(520px, 80vh);
+  display: none;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.35);
+  overflow: hidden;
+}
+
+.ai-chat-window.open {
+  display: flex;
+}
+
+.ai-chat-header {
+  padding: 0.9rem 1rem;
+  background: linear-gradient(135deg, #f97316, #ec4899);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.ai-chat-header h3 {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.ai-chat-header p {
+  font-size: 0.78rem;
+  margin: 0.15rem 0 0;
+  opacity: 0.9;
+}
+
+.ai-chat-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.ai-chat-messages {
+  padding: 0.9rem;
+  background: #f9fafb;
+  flex: 1;
+  overflow-y: auto;
+  font-size: 0.85rem;
+}
+
+.ai-chat-message {
+  display: inline-block;
+  max-width: 90%;
+  margin-bottom: 0.55rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 14px;
+  line-height: 1.4;
+}
+
+.ai-chat-message p {
+  margin: 0 0 0.2rem;
+}
+
+.ai-chat-message ul {
+  padding-left: 1.1rem;
+  margin: 0.2rem 0;
+}
+
+.ai-chat-message li {
+  margin-bottom: 0.2rem;
+}
+
+.ai-chat-assistant {
+  background: #fff7ed;
+  color: #7c2d12;
+  border-bottom-left-radius: 4px;
+}
+
+.ai-chat-user {
+  background: #eff6ff;
+  color: #1d4ed8;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.ai-chat-input {
+  display: flex;
+  padding: 0.6rem 0.7rem 0.7rem;
+  gap: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.ai-chat-input input[type="text"] {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.ai-chat-input input[type="text"]:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.18);
+}
+
+.ai-chat-input button[type="submit"] {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f97316;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.ai-chat-input button[type="submit"] i {
+  font-size: 0.85rem;
+}
+
+.ai-chat-whatsapp-btn {
+  margin-top: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: #22c55e;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ai-chat-whatsapp-btn i {
+  font-size: 0.9rem;
+}
+
+/* Versión móvil: el chat ocupa el ancho inferior */
+@media (max-width: 640px) {
+  .ai-chat-window {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 100vh;
+    border-radius: 18px 18px 0 0;
+  }
+}
+
+/* ========= Ajustes móviles adicionales ========= */
+
+/* Logo de pie de página */
+.footer-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(15, 5, 0, 0.30);
+}
+
+/* Menú y header en móvil/tablet */
+@media (max-width: 880px) {
+  /* Header fijo y con fondo sólido */
+  .site-header {
+    position: sticky;
+    top: 0;
+    background: var(--bg-body);
+    box-shadow: 0 12px 30px rgba(15, 5, 0, 0.22);
+  }
+
+  /* Menú móvil con colores acordes a la página */
+  .site-nav {
+    background: var(--bg-alt);
+    border-color: var(--border-subtle);
+  }
+
+  .site-nav a {
+    color: var(--text-main);
+  }
+
+  .nav-toggle {
+    background: var(--accent-soft);
+    border-color: var(--accent-strong);
+  }
+
+  .nav-toggle span {
+    background: var(--text-main);
+  }
+}
+
+/* Ajuste específico: tarjeta "Tu terapeuta" más ancha en móvil */
+@media (max-width: 520px) {
+  .hero-card-inner {
+    margin-inline: -0.4rem;
+  }
+}
+
+
+
+/* ==========================
+   Asistente Wellness 21PM · IA v6
+   Diseño en tonos crema/cálidos
+   ========================== */
+
+.w21-chat {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  z-index: 9999;
+  font-family: inherit;
+}
+
+/* Botón flotante */
+.w21-chat-toggle {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f9735b, #fbbf77);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(148, 27, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease;
+}
+
+.w21-chat-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(148, 27, 0, 0.5);
+  opacity: 0.96;
+}
+
+.w21-chat-toggle:active {
+  transform: translateY(0);
+  box-shadow: 0 7px 22px rgba(148, 27, 0, 0.4);
+}
+
+.w21-chat-toggle-icon {
+  font-size: 1.5rem;
+}
+
+/* Backdrop para cerrar fácilmente */
+.w21-chat-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+/* Ventana del chat */
+.w21-chat-window {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 4.4rem;
+  width: min(380px, 92vw);
+  max-height: 78vh;
+  background: #fff7ed; /* crema muy claro */
+  color: #4b5563;
+  border-radius: 1.2rem;
+  box-shadow: 0 20px 55px rgba(148, 27, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+/* Estado abierto */
+.w21-chat.open .w21-chat-window,
+.w21-chat.open .w21-chat-backdrop {
+  pointer-events: auto;
+}
+
+.w21-chat.open .w21-chat-window {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.w21-chat.open .w21-chat-backdrop {
+  opacity: 1;
+}
+
+/* Header */
+.w21-chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #fed7aa, #fecaca);
+  border-bottom: 1px solid rgba(248, 113, 113, 0.4);
+}
+
+.w21-chat-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.w21-chat-title strong {
+  font-size: 0.9rem;
+  color: #7c2d12;
+}
+
+.w21-chat-title span {
+  font-size: 0.75rem;
+  color: #9a3412;
+}
+
+.w21-chat-close {
+  border: none;
+  background: transparent;
+  color: #7c2d12;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* Área de mensajes */
+.w21-chat-messages {
+  padding: 0.8rem 0.8rem 0.4rem;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.w21-chat-message {
+  display: flex;
+}
+
+.w21-chat-message.user {
+  justify-content: flex-end;
+}
+
+.w21-chat-message.assistant {
+  justify-content: flex-start;
+}
+
+.w21-chat-bubble {
+  max-width: 84%;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.w21-chat-message.user .w21-chat-bubble {
+  background: #fb923c;
+  color: #fff7ed;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.w21-chat-message.assistant .w21-chat-bubble {
+  background: #fff;
+  border: 1px solid #fed7aa;
+  color: #4b5563;
+  border-bottom-left-radius: 0.25rem;
+}
+
+/* Listas dentro del mensaje del asistente */
+.w21-chat-bubble ul {
+  margin: 0.35rem 0;
+  padding-left: 1.1rem;
+}
+
+.w21-chat-bubble li {
+  margin-bottom: 0.15rem;
+}
+
+/* Formulario */
+.w21-chat-form {
+  padding: 0.55rem;
+  border-top: 1px solid #fed7aa;
+  display: flex;
+  gap: 0.45rem;
+  background: #fff7ed;
+}
+
+.w21-chat-input {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid #fed7aa;
+  background: #fff;
+  color: #4b5563;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.w21-chat-input::placeholder {
+  color: #9ca3af;
+}
+
+.w21-chat-send {
+  border-radius: 999px;
+  border: none;
+  padding: 0 0.95rem;
+  font-size: 0.9rem;
+  background: #fb923c;
+  color: #fff7ed;
+  cursor: pointer;
+}
+
+/* Botón de WhatsApp dentro del chat */
+.w21-chat-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #22c55e;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.35);
+}
+
+.w21-chat-wa-btn span:first-child {
+  font-size: 1rem;
+}
+
+/* Dots "escribiendo..." */
+.w21-chat-typing {
+  display: inline-flex;
+  gap: 0.18rem;
+}
+
+.w21-chat-typing span {
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 999px;
+  background: #fecaca;
+  animation: w21ChatBounce 0.9s infinite;
+}
+
+.w21-chat-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.w21-chat-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes w21ChatBounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-3px); opacity: 1; }
+}
+
+/* Responsive: en pantallas pequeñas, subimos el chat y acercamos a la orilla */
+@media (max-width: 480px) {
+  .w21-chat {
+    right: 1rem;
+    bottom: 1rem;
+  }
+  .w21-chat-window {
+    right: 0.7rem;
+    left: 0.7rem;
+    width: auto;
+  }
+}
+
+/* Override hero badge color to peach */
+.hero-badge{
+ background:#d08c65!important;
+ border-color:rgba(255,255,255,0.35)!important;
+ color:#fff6ed!important;
+}
+.hero-badge i{color:#fff6ed!important;}
+
+
+/* FAQ headings with icons */
+.faq-item h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.faq-item h3 i {
+  color: #d08c65;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+
+/* ===== Tarjetas de paquetes estilo premium ===== */
+.pricing-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.pricing-card {
+  background: #fff7ed;
+  border-radius: 1.5rem;
+  padding: 1.7rem 1.6rem 1.6rem;
+  border: 1px solid rgba(248, 187, 137, 0.65);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card.pricing-featured {
+  background: linear-gradient(180deg, #fef3c7 0%, #fff7ed 40%, #fff7ed 100%);
+  border-color: rgba(248, 187, 137, 0.9);
+}
+
+.pricing-card .badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #fb923c;
+  color: #fff;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Icono superior */
+.pricing-icon {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 999px;
+  border: 1px solid rgba(208, 140, 101, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+  background: rgba(254, 243, 199, 0.7);
+}
+
+.pricing-icon i {
+  color: #d08c65;
+  font-size: 1.1rem;
+}
+
+.pricing-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+  color: #7c2d12;
+}
+
+.pricing-card .price {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #b45309;
+  margin-bottom: 0.1rem;
+}
+
+.pricing-card .duration {
+  font-size: 0.9rem;
+  color: #9a3412;
+  margin-bottom: 0.7rem;
+}
+
+.pricing-card .desc {
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+  color: #4b5563;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 0.75rem;
+}
+
+.pricing-card ul li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.pricing-card ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  font-size: 0.9rem;
+  color: #fb923c;
+}
+
+.pricing-card .ideal {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #b45309;
+  border-top: 1px solid rgba(248, 187, 137, 0.7);
+  padding-top: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+
+/* ============================
+   CARD GENÉRICO DE SECCIÓN
+   ============================ */
+
+.section-card {
+  background:
+    radial-gradient(circle at top left, rgba(244, 223, 209, 0.7), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(233, 221, 255, 0.6), transparent 55%),
+    var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  padding: 2rem 1.6rem 2.1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ============================
+   TESTIMONIOS
+   ============================ */
+
+.testimonials-section {
+  padding: 4.6rem 0 4.2rem;
+}
+
+.testimonials-card .section-head {
+  margin-bottom: 2rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.6rem;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.3rem 1.2rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  position: relative;
+}
+
+.testimonial-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(251, 146, 60, 0.16);
+  color: #ea580c;
+  margin-bottom: 0.75rem;
+}
+
+.testimonial-quote {
+  margin-bottom: 1.1rem;
+}
+
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.testimonial-name {
+  font-weight: 600;
+}
+
+.testimonial-tag {
+  font-style: italic;
+}
+
+/* ============================
+   CTA después de paquetes
+   ============================ */
+
+.section-cta-after-packages {
+  margin-top: 3rem;
+}
+
+.section-cta-card {
+  text-align: center;
+}
+
+.section-cta-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(234, 179, 8, 0.16);
+  color: #b45309;
+  margin-bottom: 0.4rem;
+}
+
+.section-cta-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.section-cta-text {
+  max-width: 580px;
+  margin: 0 auto 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.btn-cta-secondary {
+  background: #ffffff;
+  color: #8b6a2f;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.btn-cta-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.14);
+}
+
+/* ============================
+   BARRA FIJA WHATSAPP MÓVIL
+   ============================ */
+
+.mobile-cta-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.6rem 1rem;
+  background: rgba(253, 229, 210, 0.98);
+  box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.12);
+  z-index: 900;
+  display: none;
+}
+
+.mobile-cta-content {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.mobile-cta-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.mobile-cta-button {
+  flex-shrink: 0;
+  padding: 0.5rem 1.4rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.mobile-cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.5);
+}
+
+@media (max-width: 768px) {
+  .mobile-cta-bar {
+    display: block;
+  }
+}
+
+/* ============================
+   ZONA CDMX
+   ============================ */
+
+#zona-cdmx .zona-card {
+  align-items: flex-start;
+}
+
+.zona-card-details {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.zona-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 206, 110, 0.15);
+  color: #c28b27;
+  margin: 0 auto 0.9rem auto;
+  font-size: 1.4rem;
+  align-self: center;
+}
+
+.zona-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.zona-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.zona-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: #c9a86a;
+  font-size: 1.2rem;
+}
+
+/* ============================
+   QUICK REPLIES CHAT
+   ============================ */
+
+.w21-chat-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.w21-chat-quick-replies button {
+  border-radius: var(--radius-pill);
+  border: 1px solid #fed7aa;
+  background: #fff7ed;
+  color: #92400e;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.w21-chat-quick-replies button:hover {
+  background: #ffedd5;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(251, 146, 60, 0.28);
+}
+
+@media (max-width: 480px) {
+  .w21-chat-quick-replies {
+    justify-content: flex-start;
+  }
+}
+
+/* Ajuste: en móvil, subir el chat para que no se monte sobre la barra WhatsApp */
+@media (max-width: 768px) {
+  .w21-chat {
+    bottom: 5.2rem;
+  }
+}
+
+/* ========== STICKY HEADER DESKTOP ========== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(10px);
+  transition: background var(--transition-fast), border-bottom var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.site-header.scrolled {
+  background: rgba(255, 230, 236, 0.92); /* ROSA CREMA SUAVE A */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(6px);
+}
+
+/* ========== SCROLL REVEAL ========== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== PLAN RÁPIDO PAQUETES ========== */
+.plan-rapido-card {
+  margin: 1.8rem 0 2.2rem;
+}
+
+.plan-rapido-inner {
+  padding: 1.4rem 1.4rem 1.3rem;
+}
+
+.plan-rapido-title {
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+
+.plan-rapido-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.1rem;
+  max-width: 620px;
+}
+
+.plan-rapido-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.plan-rapido-item {
+  border-radius: 1rem;
+  background: var(--bg-elevated-soft);
+  border: 1px solid var(--border-subtle);
+  padding: 1rem 1rem 0.95rem;
+  font-size: 0.88rem;
+}
+
+.plan-rapido-item h4 {
+  margin: 0.2rem 0 0.25rem;
+  font-size: 0.98rem;
+}
+
+.plan-rapido-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 206, 110, 0.15);
+  color: #b76b00;
+  margin-bottom: 0.1rem;
+}
+
+.plan-rapido-text {
+  margin: 0 0 0.35rem;
+}
+
+.plan-rapido-reco {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ========== ANTES DE TU SESIÓN ========== */
+.antes-sesion-card {
+  margin-top: 1.6rem;
+}
+
+.antes-sesion-inner {
+  padding: 1.4rem 1.5rem;
+}
+
+.antes-sesion-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.antes-sesion-title i {
+  color: var(--accent-strong);
+}
+
+.antes-sesion-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.antes-sesion-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.antes-sesion-list li {
+  padding-left: 1.1rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.antes-sesion-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  color: #c27c34;
+}
+
+/* ========== DIFERENCIA ========== */
+.diferencia-grid {
+  align-items: flex-start;
+  gap: 2.2rem;
+}
+
+.diferencia-list {
+  margin-top: 0.75rem;
+  text-align: left;
+}
+
+.diferencia-list li i {
+  color: var(--accent-strong);
+  margin-right: 0.4rem;
+}
+
+.diferencia-card {
+  padding: 1.4rem 1.4rem 1.2rem;
+}
+
+.diferencia-card h3 {
+  font-size: 1.02rem;
+  margin-bottom: 0.7rem;
+}
+
+.diferencia-target {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.diferencia-target li {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.diferencia-target i {
+  margin-top: 0.16rem;
+  color: var(--accent-strong);
+}
+
+/* ========== MINI BLOG ========== */
+.mini-blog .section-intro {
+  max-width: 640px;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+}
+
+.blog-card {
+  border-radius: 1.1rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: 1.2rem 1.25rem 1.1rem;
+  font-size: 0.9rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
+}
+
+.blog-card h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.blog-card h3 i {
+  margin-right: 0.45rem;
+  color: var(--accent-strong);
+}
+
+.blog-card p {
+  margin: 0 0 0.6rem;
+}
+
+.blog-tip {
+  font-size: 0.86rem;
+  color: var(--text-main);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-grid {
+    padding: 1.8rem 1.6rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .plan-rapido-card {
+    margin-top: 1.4rem;
+  }
+  .diferencia-grid {
+    gap: 1.4rem;
+  }
+}
+
+/* Puntos clave Qué me diferencia */
+.diferencia-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  margin-top: 1.1rem;
+}
+
+.diferencia-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.diferencia-point-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 206, 110, 0.16);
+  color: #b76b00;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.diferencia-point-title {
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+.diferencia-point-text {
+  font-size: 0.88rem;
+  margin: 0.15rem 0 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .diferencia-point {
+    align-items: flex-start;
+  }
+}
+
+/* Diferencia: formato tarjetas horizontales */
+.diferencia-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.diferencia-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.diferencia-point-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 206, 110, 0.18);
+  color: #b76b00;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.diferencia-point-title {
+  font-weight: 600;
+  margin: 0 0 0.1rem;
+}
+
+.diferencia-point-text {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+@media (min-width: 900px) {
+  .diferencia-points {
+    gap: 1rem;
+  }
+}
+
+
+.icon-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 206, 110, 0.15);
+    color: #c28b27;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin: 0 auto 1rem auto;
+}
+
+/* === GOLD TITLES STRONGER === */
+.section h2, .section-head h2, h2 {
+  font-weight: 800 !important;
+  color: #d49a2a !important; /* dorado más fuerte */
+  letter-spacing: 0.3px;
+  font-size: 1.55rem !important;
+}
+
+@media(min-width:900px){
+  .section h2, .section-head h2, h2 {
+    font-size: 2.05rem !important;
+  }
+}
+
+
+/* === BRIGHT GOLD TITLES (Option 3) === */
+.section h2,
+.section-head h2,
+h2 {
+  font-weight: 900 !important;
+  color: #e1b864 !important;
+  letter-spacing: 0.4px;
+  font-size: 1.75rem !important;
+  line-height: 1.25;
+}
+
+@media(min-width:900px){
+  .section h2,
+  .section-head h2,
+  h2 {
+    font-size: 2.3rem !important;
   }
 }
