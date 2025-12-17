@@ -8,7 +8,7 @@
         content="Wellness 21PM: masaje atlético deportivo, masaje antiestrés, descontracturante, presoterapia, acupuntura y tecnología avanzada para tu bienestar físico y emocional en CDMX." />
 
   <!-- Fuente moderna -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
 
   <!-- Iconos -->
@@ -18,16 +18,35 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.min.css" />
+  <link rel="icon" type="image/png" href="img/logo-wellness21pm.png" sizes="128x128" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Wellness 21PM",
+    "url": "https://jess90202.github.io/wellness21pm/",
+    "image": "https://jess90202.github.io/wellness21pm/img/logo-wellness21pm.png",
+    "description": "Masaje terapéutico y deportivo en CDMX. Combinación de masaje manual, tecnologías y enfoque integral para tu bienestar físico y emocional.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ciudad de México",
+      "addressCountry": "MX"
+    },
+    "telephone": "+52 55 8566 2464",
+    "priceRange": "$$"
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
     <div class="shell">
       <a href="#inicio" class="brand">
-        <div class="brand-mark">21</div>
+        <img src="img/logo-wellness21pm.png" alt="Wellness 21PM" class="brand-logo" width="128" height="128" />
         <div class="brand-text">
           <span class="brand-name">Wellness 21PM</span>
-          <span class="brand-tagline">Masaje · Movimiento · Bienestar</span>
+          <span class="brand-tagline">Tu bienestar a un masaje de distancia</span>
         </div>
       </a>
 
@@ -50,7 +69,7 @@
 
   <main>
     <!-- HERO -->
-    <section id="inicio" class="section hero">
+    <section id="inicio" class="section hero" data-reveal>
       <div class="shell hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Masaje profesional en CDMX</p>
@@ -88,9 +107,9 @@
               Masajista certificado por la UNAM con especialización en masaje atlético deportivo y masaje somático.
             </p>
             <ul class="hero-list">
-              <li><i class="fa-solid fa-check"></i> Acompañamiento a deportistas de alto rendimiento y maratonistas.</li>
-              <li><i class="fa-solid fa-check"></i> Experiencia con equipos universitarios y atletas de fuerza.</li>
-              <li><i class="fa-solid fa-check"></i> Atención personalizada, humana y orientada a resultados.</li>
+              <li><i class="fa-solid fa-spa"></i> Acompañamiento a deportistas de alto rendimiento y maratonistas.</li>
+              <li><i class="fa-solid fa-spa"></i> Experiencia con equipos universitarios y atletas de fuerza.</li>
+              <li><i class="fa-solid fa-spa"></i> Atención personalizada, humana y orientada a resultados.</li>
             </ul>
             <div class="hero-badge">
               <i class="fa-solid fa-spa"></i>
@@ -102,7 +121,7 @@
     </section>
 
     <!-- QUIÉN SOY -->
-    <section id="quien-soy" class="section section-alt">
+    <section id="quien-soy" class="section section-alt" data-reveal>
       <div class="shell two-col">
         <div>
           <p class="eyebrow">Quién soy</p>
@@ -134,16 +153,16 @@
             masaje terapéutico y herramientas tecnológicas modernas para potenciar los resultados.
           </p>
           <ul class="check-list">
-            <li><i class="fa-solid fa-circle-dot"></i> Masaje como parte de tu estilo de vida, no solo cuando hay dolor.</li>
-            <li><i class="fa-solid fa-circle-dot"></i> Acompañamiento fuera de sesión con ejercicios y recomendaciones.</li>
-            <li><i class="fa-solid fa-circle-dot"></i> Enfoque integral: físico, emocional y de rendimiento.</li>
+            <li><i class="fa-solid fa-leaf"></i> Masaje como parte de tu estilo de vida, no solo cuando hay dolor.</li>
+            <li><i class="fa-solid fa-leaf"></i> Acompañamiento fuera de sesión con ejercicios y recomendaciones.</li>
+            <li><i class="fa-solid fa-leaf"></i> Enfoque integral: físico, emocional y de rendimiento.</li>
           </ul>
         </aside>
       </div>
     </section>
 
     <!-- SERVICIOS -->
-    <section id="servicios" class="section">
+    <section id="servicios" class="section" data-reveal>
       <div class="shell">
         <div class="section-head">
           <p class="eyebrow">Servicios</p>
@@ -157,6 +176,9 @@
         <div class="services-grid">
           <article class="service-card">
             <h3>Masaje atlético deportivo</h3>
+            <div class="service-image service-image-bottom">
+              <img src="img/servicio-masaje-atletico.jpg" alt="Masaje atlético deportivo" width="400" height="250" />
+            </div>
             <p>Orientado a rendimiento, recuperación post-entrenamiento y prevención de lesiones.</p>
             <ul>
               <li>Ideal para deportistas y personas activas.</li>
@@ -166,6 +188,9 @@
 
           <article class="service-card">
             <h3>Masaje antiestrés</h3>
+            <div class="service-image service-image-bottom">
+              <img src="img/servicio-masaje-antiestres.jpg" alt="Masaje antiestrés" width="400" height="250" />
+            </div>
             <p>Trabajo profundo y a la vez relajante para soltar tensión acumulada en cuello, espalda y hombros.</p>
             <ul>
               <li>Reduce estrés físico y mental.</li>
@@ -175,6 +200,9 @@
 
           <article class="service-card">
             <h3>Masaje descontracturante</h3>
+            <div class="service-image service-image-bottom">
+              <img src="img/servicio-masaje-descontracturante.jpg" alt="Masaje descontracturante" width="400" height="250" />
+            </div>
             <p>Enfoque en puntos de dolor, contracturas y rigidez muscular que limitan tu día a día.</p>
             <ul>
               <li>Trabajo localizado en zonas específicas.</li>
@@ -184,6 +212,9 @@
 
           <article class="service-card">
             <h3>Presoterapia</h3>
+            <div class="service-image service-image-bottom">
+              <img src="img/servicio-presoterapia.jpg" alt="Presoterapia" width="400" height="250" />
+            </div>
             <p>Compresión controlada para estimular circulación, reducir inflamación y pesadez en piernas.</p>
             <ul>
               <li>Ideal para personas que pasan mucho tiempo de pie o sentadas.</li>
@@ -193,31 +224,49 @@
 
           <article class="service-card">
             <h3>Acupuntura y electroacupuntura</h3>
+            <div class="service-image service-image-bottom">
+              <img src="img/servicio-acupuntura.jpg" alt="Acupuntura y electroacupuntura" width="400" height="250" />
+            </div>
             <p>Uso de puntos energéticos para modular dolor, equilibrar y acelerar recuperación.</p>
           </article>
 
           <article class="service-card">
             <h3>TENS</h3>
+            <div class="service-image service-image-bottom">
+              <img src="img/servicio-tens.jpg" alt="TENS" />
+            </div>
             <p>Estimulación eléctrica analgésica para disminuir dolor y facilitar el movimiento.</p>
           </article>
 
           <article class="service-card">
             <h3>Ventosas</h3>
+            <div class="service-image service-image-bottom">
+              <img src="img/servicio-ventosas.jpg" alt="Ventosas" width="400" height="250" />
+            </div>
             <p>Liberación de fascia y mejora de flujo sanguíneo para tensión profunda.</p>
           </article>
 
           <article class="service-card">
             <h3>Pistola de infrarrojo y de percusión</h3>
+            <div class="service-image service-image-bottom">
+              <img src="img/servicio-pistola-infrarrojo.jpg" alt="Pistola de infrarrojo y de percusión" width="400" height="250" />
+            </div>
             <p>Apoyo térmico y mecánico para relajar tejido profundo y reducir rigidez rápidamente.</p>
           </article>
 
           <article class="service-card">
             <h3>Láser 808 y 650 nm</h3>
+            <div class="service-image service-image-bottom">
+              <img src="img/servicio-laser.jpg" alt="Láser 808 y 650 nm" width="400" height="250" />
+            </div>
             <p>Tecnología enfocada en acelerar reparación celular y procesos inflamatorios.</p>
           </article>
 
           <article class="service-card">
             <h3>Planes de seguimiento</h3>
+            <div class="service-image service-image-bottom">
+              <img src="img/servicio-planes-seguimiento.jpg" alt="Planes de seguimiento" width="400" height="250" />
+            </div>
             <p>Rutinas, ejercicios y recomendaciones personalizadas para que el avance continúe fuera de sesión.</p>
           </article>
         </div>
@@ -225,7 +274,7 @@
     </section>
 
     <!-- PRECIOS -->
-    <section id="precios" class="section section-alt">
+    <section id="precios" class="section section-alt" data-reveal>
       <div class="shell">
         <div class="section-head">
           <p class="eyebrow">Paquetes</p>
@@ -235,8 +284,50 @@
           </p>
         </div>
 
+        <div class="plan-rapido-card section-card" data-reveal>
+          <div class="plan-rapido-inner">
+            <h3 class="plan-rapido-title">Guía rápida para elegir paquete</h3>
+            <p class="plan-rapido-subtitle">
+              Si vienes con prisa, aquí tienes un mapa rápido para ubicarte. Después puedes abrir el asistente o escribirme por WhatsApp si sigues con dudas.
+            </p>
+            <div class="plan-rapido-grid">
+              <div class="plan-rapido-item">
+                <div class="plan-rapido-icon"><i class="fa-solid fa-user-injured"></i></div>
+                <h4>Dolor localizado</h4>
+                <p class="plan-rapido-text">
+                  Dolor en <strong>cuello, hombros o espalda baja</strong> por computadora, estrés o malas posturas.
+                </p>
+                <p class="plan-rapido-reco">
+                  Empezar con: <strong>Paquete Esencial</strong> o <strong>Masaje Manual de Cuerpo Completo</strong>.
+                </p>
+              </div>
+              <div class="plan-rapido-item">
+                <div class="plan-rapido-icon"><i class="fa-solid fa-brain"></i></div>
+                <h4>Estrés y descanso</h4>
+                <p class="plan-rapido-text">
+                  Mucho <strong>estrés, ansiedad</strong> o <strong>problemas para dormir bien</strong>.
+                </p>
+                <p class="plan-rapido-reco">
+                  Empezar con: <strong>Masaje Manual de Cuerpo Completo</strong> o <strong>Paquete Renacer</strong>.
+                </p>
+              </div>
+              <div class="plan-rapido-item">
+                <div class="plan-rapido-icon"><i class="fa-solid fa-person-running"></i></div>
+                <h4>Piernas cansadas / deporte</h4>
+                <p class="plan-rapido-text">
+                  <strong>Piernas pesadas</strong>, mala circulación o <strong>entrenamientos intensos</strong> (gym, running, maratón).
+                </p>
+                <p class="plan-rapido-reco">
+                  Empezar con: <strong>Paquete Plus</strong> o <strong>Paquete Renacer</strong> con enfoque deportivo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="pricing-grid">
-          <article class="pricing-card">
+          <article class="pricing-card pricing-featured">
+            <div class="pricing-icon"><i class="fa-solid fa-leaf"></i></div>
             <h3>Paquete Esencial</h3>
             <p class="price">$300 MXN</p>
             <p class="duration">20 – 35 minutos</p>
@@ -250,8 +341,8 @@
             <p class="ideal">Ideal para dolor puntual o molestias recientes.</p>
           </article>
 
-          <article class="pricing-card pricing-featured">
-            <div class="badge">Más elegido</div>
+          <article class="pricing-card">
+            <div class="pricing-icon"><i class="fa-solid fa-heart"></i></div>
             <h3>Masaje Manual de Cuerpo Completo</h3>
             <p class="price">$500 MXN</p>
             <p class="duration">50 – 70 minutos</p>
@@ -268,6 +359,8 @@
           </article>
 
           <article class="pricing-card">
+            <div class="badge">Más elegido</div>
+            <div class="pricing-icon"><i class="fa-solid fa-star-and-crescent"></i></div>
             <h3>Paquete Plus</h3>
             <p class="price">$650 MXN</p>
             <p class="duration">60 minutos</p>
@@ -285,6 +378,7 @@
           </article>
 
           <article class="pricing-card">
+            <div class="pricing-icon"><i class="fa-solid fa-fire"></i></div>
             <h3>Masaje Renacer</h3>
             <p class="price">$850 MXN</p>
             <p class="duration">75 minutos</p>
@@ -310,10 +404,31 @@
           </p>
         </div>
       </div>
-    </section>
+    
+      <div class="section-cta-after-packages">
+        <div class="section-card section-cta-card">
+          <div class="section-cta-icon">
+            <i class="fa-solid fa-circle-question"></i>
+          </div>
+          <h3 class="section-cta-title">¿Aún no sabes qué paquete elegir?</h3>
+          <p class="section-cta-text">
+            Escríbeme y te ayudo a elegir la combinación ideal de masaje y tecnologías
+            según tu caso, tu tiempo y tu presupuesto.
+          </p>
+          <a
+            href="https://wa.me/525585662464?text=Hola%20%C3%93scar,%20vengo%20de%20la%20p%C3%A1gina%20Wellness%2021PM%20y%20quiero%20ayuda%20para%20elegir%20el%20mejor%20paquete%20para%20m%C3%AD."
+            class="btn-cta btn-cta-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Quiero una recomendación
+          </a>
+        </div>
+      </div>
+</section>
 
     <!-- BENEFICIOS -->
-    <section id="beneficios" class="section">
+    <section id="beneficios" class="section" data-reveal>
       <div class="shell two-col">
         <div>
           <p class="eyebrow">Beneficios</p>
@@ -324,13 +439,13 @@
             resultados se dan cuando se vuelve parte natural de tu estilo de vida.
           </p>
           <ul class="check-list">
-            <li><i class="fa-solid fa-circle-dot"></i> Reducción significativa del estrés.</li>
-            <li><i class="fa-solid fa-circle-dot"></i> Mejor circulación y oxigenación.</li>
-            <li><i class="fa-solid fa-circle-dot"></i> Mayor movilidad y flexibilidad.</li>
-            <li><i class="fa-solid fa-circle-dot"></i> Mejor descanso y calidad del sueño.</li>
-            <li><i class="fa-solid fa-circle-dot"></i> Recuperación más rápida después del ejercicio.</li>
-            <li><i class="fa-solid fa-circle-dot"></i> Disminución de tensiones acumuladas.</li>
-            <li><i class="fa-solid fa-circle-dot"></i> Regulación del sistema nervioso.</li>
+            <li><i class="fa-solid fa-leaf"></i> Reducción significativa del estrés.</li>
+            <li><i class="fa-solid fa-leaf"></i> Mejor circulación y oxigenación.</li>
+            <li><i class="fa-solid fa-leaf"></i> Mayor movilidad y flexibilidad.</li>
+            <li><i class="fa-solid fa-leaf"></i> Mejor descanso y calidad del sueño.</li>
+            <li><i class="fa-solid fa-leaf"></i> Recuperación más rápida después del ejercicio.</li>
+            <li><i class="fa-solid fa-leaf"></i> Disminución de tensiones acumuladas.</li>
+            <li><i class="fa-solid fa-leaf"></i> Regulación del sistema nervioso.</li>
           </ul>
         </div>
         <aside class="highlight-card">
@@ -345,9 +460,219 @@
         </aside>
       </div>
     </section>
+    <!-- DIFERENCIA -->
+    <section id="diferencia" class="section" data-reveal>
+      <div class="shell two-col diferencia-grid">
+        <div>
+          <p class="eyebrow">Qué me diferencia</p>
+          <h2>Más que un masaje suelto, un acompañamiento real.</h2>
+          <p>
+            No solo “te doy un masaje y ya”. Buscamos entender qué haces en tu día a día,
+            qué hábitos te están pasando factura y qué necesitas para sentirte mejor en serio.
+          </p>
+          
+          
+          <div class="diferencia-points">
+            <div class="diferencia-point">
+              <div class="diferencia-point-icon">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+              <div class="diferencia-point-content">
+                <p class="diferencia-point-title">Atención uno a uno</p>
+                <p class="diferencia-point-text">Sesiones personalizadas, sin prisas ni cadenas de spa. Espacio tranquilo, pensado para que realmente puedas soltar tensión.</p>
+              </div>
+            </div>
+
+            <div class="diferencia-point">
+              <div class="diferencia-point-icon">
+                <i class="fa-solid fa-arrows-spin"></i>
+              </div>
+              <div class="diferencia-point-content">
+                <p class="diferencia-point-title">Enfoque integral</p>
+                <p class="diferencia-point-text">Combinamos masaje manual con tecnologías como presoterapia, pistola de masaje o acupuntura según tu caso.</p>
+              </div>
+            </div>
+
+            <div class="diferencia-point">
+              <div class="diferencia-point-icon">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <div class="diferencia-point-content">
+                <p class="diferencia-point-title">Trabajo físico y emocional</p>
+                <p class="diferencia-point-text">No solo atendemos músculos y articulaciones; también consideramos cómo te afecta el estrés, la ansiedad y las preocupaciones del día a día.</p>
+              </div>
+            </div>
+
+            <div class="diferencia-point">
+              <div class="diferencia-point-icon">
+                <i class="fa-solid fa-route"></i>
+              </div>
+              <div class="diferencia-point-content">
+                <p class="diferencia-point-title">Plan de seguimiento sencillo</p>
+                <p class="diferencia-point-text">Te doy recomendaciones fáciles de aplicar fuera de la camilla para que el efecto del masaje dure más tiempo.</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <aside class="section-card diferencia-card">
+          <h3>Para quién es Wellness 21PM</h3>
+          <ul class="diferencia-target">
+            <li><i class="fa-solid fa-laptop"></i> Personas que pasan muchas horas sentadas o frente a la computadora.</li>
+            <li><i class="fa-solid fa-dumbbell"></i> Quienes entrenan fuerte (gym, running, maratón) y necesitan recuperar bien.</li>
+            <li><i class="fa-solid fa-heart-circle-bolt"></i> Personas con alto nivel de estrés que ya sienten que el cuerpo “no aguanta igual”.</li>
+            <li><i class="fa-solid fa-person-walking"></i> Personas mayores o con movilidad reducida que quieren sentirse más ligeras.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ZONA DE ATENCIÓN CDMX -->
+    <section id="zona-cdmx" class="section" data-reveal>
+      <div class="shell">
+        <div class="section-card zona-card two-col">
+          <div>
+            <p class="eyebrow">Zona de atención</p>
+            <h2>Masaje terapéutico y deportivo en CDMX</h2>
+            <p>
+              Trabajo principalmente en <strong>CDMX</strong>, en zona de fácil acceso para quienes
+              pasan muchas horas frente a la computadora, entrenan fuerte o cargan estrés día a día.
+            </p>
+            <p>
+              Si tienes <strong>dolor de cuello o espalda</strong>, <strong>piernas cansadas</strong> por estar de pie,
+              sobrecarga por <strong>entrenamiento deportivo</strong> o simplemente necesitas desconectarte,
+              puedo ayudarte a construir un plan de recuperación realista para ti.
+            </p>
+          </div>
+          <div class="zona-card-details">
+            <div class="zona-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <ul class="zona-list">
+              <li><strong>Ubicación:</strong> CDMX (consulta la ubicación exacta al agendar por WhatsApp).</li>
+              <li><strong>Atención personalizada:</strong> sesiones uno a uno, sin prisas ni cadenas de spa.</li>
+              <li><strong>Enfoque integral:</strong> masaje terapéutico + tecnologías (presoterapia, pistola, acupuntura) según tu caso.</li>
+              <li><strong>Horarios:</strong> flexibles, sujeto a disponibilidad. Pregunta por espacios el mismo día.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="section testimonials-section" data-reveal>
+      <div class="shell">
+        <div class="section-card testimonials-card">
+          <div class="section-head">
+            <p class="eyebrow">Testimonios</p>
+            <h2 class="section-title">Lo que dicen mis pacientes</h2>
+            <p class="section-subtitle">
+              Historias reales de personas que confiaron en Wellness 21PM para cuidar su cuerpo y su bienestar.
+            </p>
+          </div>
+
+          <div class="testimonials-grid">
+            <article class="testimonial-card">
+              <div class="testimonial-icon">
+                <i class="fa-solid fa-quote-left"></i>
+              </div>
+              <p class="testimonial-quote">
+                “Llegué con dolor lumbar por pasar tantas horas frente a la computadora.
+                Después de tres sesiones combinando masaje terapéutico y tecnología,
+                el dolor disminuyó notablemente y ahora puedo trabajar sin tantas molestias.”
+              </p>
+              <p class="testimonial-meta">
+                <span class="testimonial-name">María G.</span>
+                <span class="testimonial-tag">Dolor lumbar crónico</span>
+              </p>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-icon">
+                <i class="fa-solid fa-person-running"></i>
+              </div>
+              <p class="testimonial-quote">
+                “Entreno para maratones y siempre terminaba con las piernas pesadas.
+                El masaje deportivo con presoterapia me ayudó a recuperar mejor y a sentir
+                las piernas mucho más ligeras después de las carreras.”
+              </p>
+              <p class="testimonial-meta">
+                <span class="testimonial-name">Luis R.</span>
+                <span class="testimonial-tag">Preparación deportiva</span>
+              </p>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="testimonial-icon">
+                <i class="fa-solid fa-spa"></i>
+              </div>
+              <p class="testimonial-quote">
+                “Traía mucho estrés, contracturas en cuello y hombros y dormía muy mal.
+                Con el masaje relajante y el enfoque en respiración y bienestar,
+                empecé a descansar mejor y a sentir menos tensión en el día a día.”
+              </p>
+              <p class="testimonial-meta">
+                <span class="testimonial-name">Andrea P.</span>
+                <span class="testimonial-tag">Estrés y tensión en cuello</span>
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- MINI BLOG -->
+    <section id="blog" class="section section-alt mini-blog" data-reveal>
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Aprende un poco más</p>
+          <h2>Notas rápidas para cuidar tu cuerpo día a día.</h2>
+          <p class="section-intro">
+            No necesitas memorizar teoría complicada. Estas ideas sencillas pueden ayudarte a entender mejor lo que sientes
+            y a tomar mejores decisiones sobre tu cuerpo.
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card">
+            <h3><i class="fa-solid fa-computer"></i> Dolor de cuello por computadora</h3>
+            <p>
+              Pasar muchas horas sentado frente a la pantalla hace que la cabeza vaya “viajando” hacia adelante,
+              sobrecargando músculos del cuello y la parte alta de la espalda.
+            </p>
+            <p class="blog-tip">
+              <strong>Tip rápido:</strong> cada 45–60 minutos, levántate, camina un poco y lleva la barbilla suavemente hacia el pecho y luego hacia atrás.
+            </p>
+          </article>
+
+          <article class="blog-card">
+            <h3><i class="fa-solid fa-shoe-prints"></i> Piernas cansadas y circulación</h3>
+            <p>
+              Estar muchas horas de pie o sentado dificulta el retorno venoso, por eso las piernas se sienten pesadas o hinchadas al final del día.
+            </p>
+            <p class="blog-tip">
+              <strong>Tip rápido:</strong> eleva las piernas unos minutos al llegar a casa y combina masaje + movimiento suave para activar la circulación.
+            </p>
+          </article>
+
+          <article class="blog-card">
+            <h3><i class="fa-solid fa-bolt"></i> Estrés físico vs. emocional</h3>
+            <p>
+              A veces el cuerpo duele no solo por carga física, sino por todo lo que traemos en la cabeza.
+              El estrés sostenido hace que la musculatura esté en alerta constante.
+            </p>
+            <p class="blog-tip">
+              <strong>Tip rápido:</strong> combina masaje con respiraciones profundas y pequeños cambios en tu rutina de sueño.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
 
     <!-- FAQ -->
-    <section id="faq" class="section section-alt">
+    <section id="faq" class="section section-alt" data-reveal>
       <div class="shell">
         <div class="section-head">
           <p class="eyebrow">Preguntas frecuentes</p>
@@ -356,7 +681,7 @@
 
         <div class="faq-grid">
           <article class="faq-item">
-            <h3>¿El masaje y la fisioterapia son lo mismo?</h3>
+            <h3><i class="fa-solid fa-hand-holding-medical"></i> ¿El masaje y la fisioterapia son lo mismo?</h3>
             <p>
               No. El masaje trabaja sobre tejido muscular, circulación, relajación y movilidad, ayudando a aliviar
               molestias y mejorar el bienestar general. La fisioterapia es una disciplina de la salud que requiere
@@ -369,7 +694,7 @@
           </article>
 
           <article class="faq-item">
-            <h3>¿Cuántas sesiones necesito?</h3>
+            <h3><i class="fa-solid fa-calendar-check"></i> ¿Cuántas sesiones necesito?</h3>
             <p>
               Depende de tu objetivo: para molestias agudas, a veces una o dos sesiones pueden marcar diferencia;
               para procesos crónicos o alto estrés, suele recomendarse un plan con varias sesiones distribuidas en semanas.
@@ -377,7 +702,7 @@
           </article>
 
           <article class="faq-item">
-            <h3>¿Duele el masaje?</h3>
+            <h3><i class="fa-solid fa-face-smile"></i> ¿Duele el masaje?</h3>
             <p>
               Algunas técnicas de trabajo profundo pueden generar molestias tolerables, pero nunca se busca un dolor
               innecesario. Durante la sesión se ajusta la intensidad a tu umbral de comodidad.
@@ -385,7 +710,7 @@
           </article>
 
           <article class="faq-item">
-            <h3>¿Qué debo llevar o considerar antes de la sesión?</h3>
+            <h3><i class="fa-solid fa-clipboard-list"></i> ¿Qué debo llevar o considerar antes de la sesión?</h3>
             <p>
               Ropa cómoda, haber comido ligero y avisar si tienes alguna condición de salud relevante (diagnóstico médico,
               lesiones recientes, embarazo, etc.).
@@ -396,33 +721,21 @@
     </section>
 
     <!-- UBICACIÓN -->
-    <section id="ubicacion" class="section">
-      <div class="shell two-col">
+    <section id="ubicacion" class="section" data-reveal>
+      <div class="shell">
         <div>
           <p class="eyebrow">Ubicación</p>
           <h2>Estamos en CDMX, listos para atenderte.</h2>
-          <p>
-            Aquí va la dirección exacta del consultorio o espacio de atención. Puedes ajustar este texto con tu ubicación
-            precisa, colonia y referencias.
-          </p>
           <ul class="check-list">
-            <li><i class="fa-solid fa-clock"></i> Horario sugerido: Lunes a viernes de 11:00 a 19:00 hrs.</li>
-            <li><i class="fa-solid fa-car"></i> Indicar si hay estacionamiento, acceso en transporte público, etc.</li>
+            <li><i class="fa-solid fa-clock"></i> Horario: Lunes a domingo de 10:00 a 20:00 hrs.</li>
+            <li><i class="fa-solid fa-location-dot"></i> Indicar si llegará en carro particular para el lugar del estacionamiento.</li>
           </ul>
-        </div>
-        <div class="map-wrapper">
-          <!-- Reemplaza el src con tu mapa de Google Maps -->
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12000!2d-99.13!3d19.43!2m3!1f0!2f0!3f0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
         </div>
       </div>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="section section-alt">
+    <section id="contacto" class="section section-alt" data-reveal>
       <div class="shell contact-grid">
         <div>
           <p class="eyebrow">Contacto</p>
@@ -431,20 +744,39 @@
             Cuéntame qué te duele, qué actividad realizas y qué buscas conseguir con la sesión.
             Con esa información puedo proponerte el paquete y enfoque que más te convenga.
           </p>
+          <div class="antes-sesion-card section-card" data-reveal>
+            <div class="antes-sesion-inner">
+              <h3 class="antes-sesion-title">
+                <i class="fa-solid fa-clipboard-list"></i> Antes de tu sesión
+              </h3>
+              <p class="antes-sesion-text">
+                Para que aproveches mejor tu masaje y vengas con tranquilidad, ten en cuenta estas recomendaciones:
+              </p>
+              <ul class="antes-sesion-list">
+                <li><strong>Ropa cómoda:</strong> de preferencia fácil de poner y quitar. Si vienes de la oficina o del gym, puedes traer una muda ligera.</li>
+                <li><strong>Comida:</strong> evita llegar con el estómago completamente lleno; lo ideal es haber comido ligero 1–2 horas antes.</li>
+                <li><strong>Hidratación:</strong> toma agua antes y después de la sesión para ayudar al cuerpo a liberar tensión y toxinas.</li>
+                <li><strong>Contraindicaciones:</strong> si tienes fiebre, infección aguda o un diagnóstico médico reciente, avísame antes de agendar.</li>
+                <li><strong>Después del masaje:</strong> es normal sentirte más relajado, con sueño o un poco cansado. Procura no agendar actividades muy demandantes justo después.</li>
+              </ul>
+            </div>
+          </div>
+
 
           <div class="contact-info">
             <div>
               <span class="label">WhatsApp</span>
-              <a href="https://wa.me/5210000000000?text=Hola,%20quiero%20agendar%20una%20cita%20de%20masaje."
+              <a href="https://wa.me/5585662464?text=Hola,%20quiero%20agendar%20una%20cita%20de%20masaje."
                  target="_blank" rel="noopener">
-                <i class="fa-brands fa-whatsapp"></i> +52 1 XXX XXX XXXX
+                <i class="fa-brands fa-whatsapp"></i> +52 55 8566 2464
               </a>
             </div>
             <div>
               <span class="label">Correo</span>
-              <a href="mailto:tu-correo@ejemplo.com">tu-correo@ejemplo.com</a>
+              <a href="mailto:oscar.mau.hdz21@gmail.com">oscar.mau.hdz21@gmail.com</a>
             </div>
           </div>
+          
 
           <p class="contact-note">
             Si tienes diagnóstico médico, cirugía reciente o condición específica, por favor menciónalo
@@ -454,11 +786,12 @@
 
         <div class="contact-card">
           <h3>Formulario de cita</h3>
-          <form action="https://formsubmit.co/tu-correo@ejemplo.com"
+          <form action="https://formsubmit.co/oscar.mau.hdz21@gmail.com"
                 method="POST">
-            <input type="hidden" name="_subject" value="Nueva solicitud de cita – Wellness 21PM" />
+              <div class="form-cols">
+<input type="hidden" name="_subject" value="Nueva solicitud de cita – Wellness 21PM" />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="https://tusitio.github.io/wellness21pm/gracias.html" />
+            <input type="hidden" name="_next" value="https://jess90202.github.io/wellness21pm/gracias.html" />
 
             <label for="nombre">Nombre completo</label>
             <input type="text" id="nombre" name="Nombre" required />
@@ -486,7 +819,8 @@
             <p class="form-footnote">
               Al enviar este formulario aceptas ser contactado(a) por WhatsApp o correo para confirmar tu cita.
             </p>
-          </form>
+              </div>
+            </form>
         </div>
       </div>
     </section>
@@ -496,10 +830,10 @@
     <div class="shell footer-grid">
       <div>
         <div class="brand-inline">
-          <div class="brand-mark">21</div>
+          <img src="img/logo-wellness21pm.png" alt="Wellness 21PM" class="footer-logo" />
           <span class="brand-name">Wellness 21PM</span>
         </div>
-        <p>Masaje terapéutico y deportivo en CDMX, con enfoque humano, técnico e integral.</p>
+        <p>Masaje terapéutico y deportivo, tu bienestar a un masaje de distacia.</p>
       </div>
       <div class="footer-meta">
         <p>© <span id="year"></span> Wellness 21PM. Todos los derechos reservados.</p>
@@ -509,5 +843,79 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <!-- Asistente Wellness 21PM · IA v6 limpio -->
+  
+  <!-- Barra fija de WhatsApp (solo móvil) -->
+  <div class="mobile-cta-bar">
+    <div class="mobile-cta-content">
+      <span class="mobile-cta-text">
+        ¿Agendamos tu sesión?
+      </span>
+      <a
+        href="https://wa.me/525585662464?text=Hola%20%C3%93scar,%20me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20masaje%20en%20Wellness%2021PM."
+        class="mobile-cta-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        WhatsApp
+      </a>
+    </div>
+  </div>
+
+<div class="w21-chat">
+    <button class="w21-chat-toggle" aria-label="Abrir asistente Wellness">
+      <span class="w21-chat-toggle-icon">💬</span>
+    </button>
+
+    <div class="w21-chat-backdrop" data-w21-close></div>
+
+    <div class="w21-chat-window" aria-hidden="true">
+      <header class="w21-chat-header">
+        <div class="w21-chat-title">
+          <strong>Óscar · Asistente Wellness 21PM</strong>
+          <span>Te ayudo a elegir masaje, tecnologías y paquete</span>
+        </div>
+        <button class="w21-chat-close" type="button" aria-label="Cerrar asistente">
+          ×
+        </button>
+      </header>
+
+      <div class="w21-chat-messages" id="w21ChatMessages"></div>
+      <div class="w21-chat-quick-replies">
+        <button type="button" data-w21-quick="Tengo dolor en cuello y hombros, siento mucha tensión en la parte alta de la espalda.">
+          Dolor cuello y hombros
+        </button>
+        <button type="button" data-w21-quick="Tengo dolor en la espalda baja o zona lumbar, a veces baja a glúteos o piernas.">
+          Dolor lumbar / espalda baja
+        </button>
+        <button type="button" data-w21-quick="Siento las piernas muy cansadas, pesadas o con mala circulación.">
+          Piernas cansadas / mala circulación
+        </button>
+        <button type="button" data-w21-quick="Traigo mucho estrés, ansiedad o no estoy durmiendo bien.">
+          Estrés / no descanso bien
+        </button>
+        <button type="button" data-w21-quick="Hago ejercicio fuerte o entreno (gym, correr, maratón) y necesito recuperación.">
+          Recuperación deportiva
+        </button>
+      </div>
+
+
+      <form class="w21-chat-form" id="w21ChatForm">
+        <input
+          type="text"
+          id="w21ChatInput"
+          class="w21-chat-input"
+          name="w21ChatInput"
+          autocomplete="off"
+          placeholder="Escribe aquí tu respuesta..."
+          required
+        />
+        <button type="submit" class="w21-chat-send" aria-label="Enviar mensaje">
+          ➤
+        </button>
+      </form>
+    </div>
+  </div>
+
 </body>
-</html>
