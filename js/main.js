@@ -119,12 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "Pensado para recuperación después de entrenamientos fuertes, maratones y sobrecarga por ejercicio."
     },
     {
-      id: "bambu_piedras",
-      name: "Masaje con bambuterapia y piedras volcánicas",
-      tags: ["estres", "espalda", "lumbar", "relajacion_profunda"],
-      description: "Ayuda a relajar musculatura profunda y liberar tensión acumulada, sobre todo en espalda y zona lumbar."
-    },
-    {
       id: "pistola_impacto",
       name: "Masaje con pistola de impacto e infrarrojo",
       tags: ["dolor_fuerte", "contracturas", "espalda", "lumbar", "deporte"],
@@ -301,6 +295,18 @@ document.addEventListener("DOMContentLoaded", () => {
   function buildRecommendation(rawText) {
     const tags = extractTags(rawText);
 
+    const bodyAreas = new Set();
+    if (tags.includes("cabeza")) bodyAreas.add("cabeza");
+    if (tags.includes("cuello")) bodyAreas.add("cuello");
+    if (tags.includes("lumbar")) {
+      bodyAreas.add("lumbar");
+    } else if (tags.includes("espalda")) {
+      bodyAreas.add("espalda");
+    }
+    if (tags.includes("piernas")) bodyAreas.add("piernas");
+
+    const singleAreaFocus = bodyAreas.size === 1 && !tags.includes("multiples_zonas");
+
     // Servicios recomendados (combo)
     const scoredServices = SERVICES
       .map(s => ({ ...s, score: scoreItem(s.tags, tags) }))
@@ -321,6 +327,9 @@ document.addEventListener("DOMContentLoaded", () => {
       .sort((a, b) => b.score - a.score);
 
     let mainPackage = scoredPackages[0];
+    if (singleAreaFocus) {
+      mainPackage = PACKAGES.find(p => p.id === "esencial");
+    }
     if (!mainPackage || mainPackage.score === 0) {
       if (tags.includes("circulacion") || tags.includes("piernas") || tags.includes("deporte") || tags.includes("lumbar")) {
         mainPackage = PACKAGES.find(p => p.id === "plus");
