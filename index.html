@@ -20,7 +20,7 @@
   <meta property="og:image" content="https://21pmwellness.dpdns.org/img/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Logo de Wellness 21PM: luna salvia con el número 21" />
+  <meta property="og:image:alt" content="Sello dorado de Wellness 21PM: masajista trabajando la espalda de una persona, con una luna" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Iconos del sitio -->
@@ -28,12 +28,12 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <meta name="theme-color" content="#1E2620" />
+  <meta name="theme-color" content="#F2DEC7" />
 
-  <!-- Tipografía: Cormorant Garamond (títulos) + Inter (texto) -->
+  <!-- Tipografía: Bodoni Moda (títulos) + DM Sans (texto) + Allura (firma) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Allura&amp;family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&amp;display=swap"
         rel="stylesheet" />
 
   <!-- Iconos -->
@@ -43,6 +43,7 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer" />
 
+  <link rel="preload" as="image" href="img/fotos/masaje-espalda.webp" />
   <link rel="stylesheet" href="css/site.css" />
 
   <script type="application/ld+json">
@@ -56,7 +57,7 @@
         "slogan": "Tu bienestar a un masaje de distancia",
         "url": "https://21pmwellness.dpdns.org/",
         "image": "https://21pmwellness.dpdns.org/img/og-image.png",
-        "logo": "https://21pmwellness.dpdns.org/img/brand/luna21-color.svg",
+        "logo": "https://21pmwellness.dpdns.org/img/brand/sello-dorado.png",
         "description": "Masaje deportivo, terapéutico, descontracturante y antiestrés en Culhuacán, Coyoacán. Masajista certificado por la UNAM. Consultorio o a domicilio, mañanas y noches.",
         "telephone": "+52-55-8566-2464",
         "email": "oscar.mau.hdz21@gmail.com",
@@ -144,242 +145,281 @@
   </script>
 </head>
 <body>
+  <!-- Iconos propios (trazo fino, se pintan con currentColor) -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g-split" x1="0" y1="0" x2="1" y2="0">
+        <stop offset=".58" stop-color="#CF7D65"/><stop offset=".58" stop-color="#99B4AA"/>
+      </linearGradient>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.6A7.9 7.9 0 0 1 9.4 4.5a8 8 0 1 0 10.1 10.1z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></symbol>
+      <symbol id="i-hand" viewBox="0 0 24 24"><path d="M7.5 12.5V7a1.4 1.4 0 0 1 2.8 0v4.5M10.3 11V4.6a1.4 1.4 0 0 1 2.8 0V11M13.1 11V5.8a1.4 1.4 0 0 1 2.8 0v5.7M15.9 11.5V8.6a1.4 1.4 0 0 1 2.8 0v5.2c0 4.1-2.6 7.2-6.6 7.2-2.9 0-4.6-1.5-6-4l-1.6-2.9a1.4 1.4 0 0 1 2.4-1.4l1.1 1.6"/></symbol>
+      <symbol id="i-run" viewBox="0 0 24 24"><circle cx="15.5" cy="4.5" r="1.8"/><path d="M8.5 21l2.8-5.6 3 2.4v3.7M6.5 11.2l3-3h4.3l1.9 3.4 3 .9M11.3 15.4l1.2-4.6"/></symbol>
+      <symbol id="i-stones" viewBox="0 0 24 24"><ellipse cx="12" cy="18.6" rx="7.5" ry="2.6"/><ellipse cx="12" cy="13" rx="5.4" ry="2.3"/><ellipse cx="12" cy="8.2" rx="3.4" ry="1.9"/><path d="M12 6.3c0-1.8 1-3 2.6-3.6"/></symbol>
+      <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2.5 9c2.4-3 4.4-3 6.4 0s4 3 6.3 0 4.2-3 6.3 0M2.5 15c2.4-3 4.4-3 6.4 0s4 3 6.3 0 4.2-3 6.3 0"/></symbol>
+      <symbol id="i-legs" viewBox="0 0 24 24"><path d="M8.5 2.5v9.5l-1.2 9.5h3.2l1.2-8.2M15.5 2.5v9.5l1.2 9.5h-3.2l-1.2-8.2M7.6 7.5h4.2M12.2 7.5h4.2M7.8 11h3.8M12.4 11h3.8"/></symbol>
+      <symbol id="i-needle" viewBox="0 0 24 24"><path d="M3.5 20.5l11.2-11.2M13 6.4l4.6 4.6M16.1 3.3l4.6 4.6M14.6 4.9l4.5 4.5"/><circle cx="3.5" cy="20.5" r=".6"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.2 2.5L5 14h6.2l-1 7.5L19 10h-6.2z"/></symbol>
+      <symbol id="i-cup" viewBox="0 0 24 24"><path d="M5.5 15a6.5 6.5 0 0 1 13 0zM3.5 15h17M12 8.5V4.5M9.5 4.5h5"/><path d="M6 19h12"/></symbol>
+      <symbol id="i-heat" viewBox="0 0 24 24"><path d="M7.5 20.5c-2-2.6 2-4.6 0-7.2s2-4.6 0-7.2M12 20.5c-2-2.6 2-4.6 0-7.2s2-4.6 0-7.2M16.5 20.5c-2-2.6 2-4.6 0-7.2s2-4.6 0-7.2"/></symbol>
+      <symbol id="i-laser" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.4"/><path d="M12 2.5v3.6M12 17.9v3.6M2.5 12h3.6M17.9 12h3.6M5.3 5.3l2.5 2.5M16.2 16.2l2.5 2.5M5.3 18.7l2.5-2.5M16.2 7.8l2.5-2.5"/></symbol>
+      <symbol id="i-path" viewBox="0 0 24 24"><circle cx="5" cy="19" r="2"/><circle cx="19" cy="5" r="2"/><path d="M7 19c4 0 3-5 6-7s4-1 4-5"/></symbol>
+      <symbol id="i-yin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M12 2.8a4.6 4.6 0 0 1 0 9.2 4.6 4.6 0 0 0 0 9.2"/><circle cx="12" cy="7.4" r=".9"/><circle cx="12" cy="16.6" r=".9"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.5-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.5 12 20 12 20z"/></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 10.5 4.5 20 4.5 20 14 14 19 5 19zM5 19l8-8"/></symbol>
+      <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21.5c-3.9 0-6.5-2.6-6.5-6.2 0-4.7 4.5-6.6 4.5-11.8 3.4 1.8 5 4.5 5 7.3 1-.6 1.7-1.7 1.9-2.9 1.3 1.5 1.6 3.4 1.6 4.9 0 4.4-2.6 8.7-6.5 8.7z"/></symbol>
+      <symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="15" r="5.5"/><path d="M8.5 10.7L5.5 2.5h4.2L12 8M15.5 10.7l3-8.2h-4.2L12 8M12 12.7v4.6"/></symbol>
+      <symbol id="i-weight" viewBox="0 0 24 24"><path d="M6.5 7v10M17.5 7v10M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></symbol>
+      <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4.5" y="5" width="15" height="10.5" rx="1.5"/><path d="M2.5 19h19"/></symbol>
+      <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="12.5" cy="4" r="1.8"/><path d="M9.5 21.5l2.5-7.5 2.8 2.6v4.9M8.5 12l2.5-4.5h2.7l1.8 3.6 2.5 1M12 14l.8-6.5M18.5 13.5v8"/></symbol>
+      <symbol id="i-mind" viewBox="0 0 24 24"><path d="M8 19.5v-3C5.5 15.5 4 13.4 4 11a7.5 7.5 0 0 1 15 0c0 .6 1.5 2.6 1.5 3.2 0 .4-.4.8-1.5.8v2c0 1.4-1 2.5-2.5 2.5h-1.5"/><path d="M9.5 10.5c1-1.5 3-1.5 4 0"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-6.5-6.2-6.5-11.5a6.5 6.5 0 0 1 13 0c0 5.3-6.5 11.5-6.5 11.5z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4M8.5 14.5l2.2 2.2 4.6-4.4"/></symbol>
+      <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 15.5v-3l2-5h12l2 5v3zM4 15.5v3h2.5v-3M17.5 15.5v3H20v-3M4 12.5h16"/><circle cx="7.5" cy="14" r=".6"/><circle cx="16.5" cy="14" r=".6"/></symbol>
+      <symbol id="i-house" viewBox="0 0 24 24"><path d="M3.5 11L12 3.5l8.5 7.5M6 9v11.5h12V9M10 20.5v-6h4v6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l4.5 4.5 10.5-10.5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15.5M13.5 6l6 6-6 6"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4.5v15M4.5 12h15"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2.5 9.5L12 5l9.5 4.5L12 14zM6.5 11.5v4.5c3 2.4 8 2.4 11 0v-4.5M21.5 9.5v5"/></symbol>
+      <symbol id="i-person" viewBox="0 0 24 24"><circle cx="10" cy="7.5" r="3.5"/><path d="M3.5 20.5c0-3.8 2.9-6.5 6.5-6.5 1.6 0 3 .5 4.1 1.4M14.5 18.5l2 2 4-4"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L3 10.5l7.2 2.8L21 3l-7.7 18-3.1-7.7"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></symbol>
+      <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.5s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11z"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L12 16.8 6.4 20l1.4-6.3L3 9.4l6.4-.6z"/></symbol>
+      <symbol id="i-map" viewBox="0 0 24 24"><path d="M3.5 6.5l5.5-2 6 2 5.5-2v13l-5.5 2-6-2-5.5 2zM9 4.5v13M15 6.5v13"/></symbol>
+    </defs>
+  </svg>
+
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <header class="site-header">
-    <div class="shell nav-bar">
+    <div class="nav-pill">
       <a href="#inicio" class="brand" aria-label="Wellness 21PM, ir al inicio">
-        <img src="img/brand/luna21-color.svg" alt="" class="brand-logo" width="44" height="44" />
+        <span class="brand-mark"><img src="img/brand/marca-dorada.webp" alt="" width="48" height="48" /></span>
         <span class="brand-text">
           <span class="brand-name">Wellness 21PM</span>
           <span class="brand-tagline">Tu bienestar a un masaje de distancia</span>
         </span>
       </a>
 
+      <nav class="site-nav" id="menu-principal" aria-label="Principal">
+        <ul>
+          <li><a href="#quien-soy">Quién soy</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#precios">Paquetes</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#faq">Preguntas</a></li>
+          <li><a href="#ubicacion">Horario</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contacto" class="nav-cta">
+        Agendar
+        <span class="nav-cta-dot" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
+      </a>
+
       <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
         <span></span><span></span><span></span>
       </button>
-
-      <nav class="site-nav" id="menu-principal" aria-label="Principal">
-        <a href="#quien-soy">Quién soy</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#precios">Paquetes</a>
-        <a href="#beneficios">Beneficios</a>
-        <a href="#faq">FAQ</a>
-        <a href="#ubicacion">Ubicación y horario</a>
-        <a href="#contacto" class="nav-cta">Agendar</a>
-      </nav>
     </div>
   </header>
 
   <main id="contenido">
-    <!-- HERO: mañana y noche -->
+    <!-- INICIO -->
     <section id="inicio" class="hero">
-      <figure class="hero-shape hero-shape--morning" aria-hidden="true">
-        <img src="img/hojas-manana.jpg" alt="" width="825" height="1100" fetchpriority="high" />
-        <figcaption class="hero-shape-label"><i class="fa-regular fa-sun"></i> 8:00 – 13:00</figcaption>
-      </figure>
+      <div class="shell hero-grid">
+        <div class="hero-text">
+          <div class="hero-top">
+            <p class="hero-micro">Masaje profesional<br />en el sur de la CDMX</p>
+            <svg class="hero-moon ico" aria-hidden="true"><use href="#i-moon"/></svg>
+          </div>
+          <p class="hero-slogan">Tu bienestar <em>a un masaje</em> de distancia</p>
+          <p class="hero-tags">Deportivo <span aria-hidden="true">•</span> Terapéutico <span aria-hidden="true">•</span> A domicilio</p>
 
-      <div class="hero-center">
-        <img src="img/brand/luna21-color.svg" alt="" class="hero-mark" width="72" height="72" />
-        <p class="kicker">Masaje profesional en el sur de la CDMX</p>
-        <h1>Masaje deportivo y terapéutico en Culhuacán y Coapa</h1>
-        <p class="hero-slogan">Tu bienestar a un masaje de distancia</p>
-        <p class="hero-lead">
-          Oscar Hernández, masajista certificado por la UNAM, te atiende uno a uno en consultorio o a domicilio.
-          De mañana y también de noche.
-        </p>
-        <div class="hero-actions">
-          <a href="https://wa.me/525585662464?text=Hola%20%C3%93scar,%20vengo%20de%20la%20p%C3%A1gina%20y%20quiero%20agendar%20un%20masaje."
-             class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-            Agendar por WhatsApp
-            <i class="fa-solid fa-arrow-right btn-arrow" aria-hidden="true"></i>
-          </a>
-          <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
+          <div class="hero-quote">
+            <span class="quote-mark" aria-hidden="true">“</span>
+            <div>
+              <h1>Masaje deportivo y terapéutico en Culhuacán y Coapa</h1>
+              <p class="hero-lead">
+                Oscar Hernández, masajista certificado por la UNAM, te atiende uno a uno en consultorio o a domicilio.
+                De mañana y también de noche.
+              </p>
+              <p class="signature" aria-hidden="true">Oscar Hernández</p>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/525585662464?text=Hola%20%C3%93scar,%20vengo%20de%20la%20p%C3%A1gina%20y%20quiero%20agendar%20un%20masaje."
+               class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              Agendar por WhatsApp
+            </a>
+            <a href="#servicios" class="btn btn-ghost">Ver servicios <span class="btn-dot" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+          </div>
+          <p class="open-status" data-open-status role="status">
+            <span class="open-dot" aria-hidden="true"></span>
+            <span data-open-text>Mañanas de 8 a 13 h · Noches de 20 a 23 h</span>
+          </p>
         </div>
-        <p class="open-status" data-open-status role="status">
-          <span class="open-dot" aria-hidden="true"></span>
-          <span data-open-text>Mañanas de 8 a 13 h · Noches de 20 a 23 h</span>
-        </p>
-        <span class="hero-line" aria-hidden="true"></span>
+
+        <div class="hero-visual">
+          <span class="hero-sun" aria-hidden="true"></span>
+          <svg class="rings" viewBox="0 0 200 200" aria-hidden="true">
+            <circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="84"/><circle cx="100" cy="100" r="72"/>
+            <circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="48"/><circle cx="100" cy="100" r="36"/>
+          </svg>
+          <figure class="arch arch--hero">
+            <img src="img/fotos/masaje-espalda.webp" alt="Manos de masajista trabajando el hombro y la espalda alta"
+                 width="1024" height="683" fetchpriority="high" />
+          </figure>
+          <img src="img/brand/sello-dorado.webp" alt="" class="hero-seal" width="130" height="130" />
+          <div class="hero-badge">
+            <span class="pebble pebble--olive"><svg class="ico"><use href="#i-moon"/></svg></span>
+            <div>
+              <strong>Abierto de noche</strong>
+              <span>De 20:00 a 23:00 h, con cita</span>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <figure class="hero-shape hero-shape--night" aria-hidden="true">
-        <svg class="night-sky" viewBox="0 0 400 520" preserveAspectRatio="xMidYMid slice" focusable="false">
-          <rect width="400" height="520" fill="#1E2620" />
-          <circle class="star" cx="62" cy="88" r="2" fill="#D9E1D9" />
-          <circle class="star star--2" cx="318" cy="64" r="1.6" fill="#D9E1D9" />
-          <circle class="star star--3" cx="350" cy="210" r="2.2" fill="#D9E1D9" />
-          <circle class="star" cx="96" cy="300" r="1.4" fill="#D9E1D9" />
-          <circle class="star star--2" cx="250" cy="420" r="1.8" fill="#D9E1D9" />
-          <circle class="star star--3" cx="40" cy="450" r="1.5" fill="#D9E1D9" />
-          <g class="night-moon" transform="translate(70 120) scale(1.02)">
-            <path d="M119.63 30.30 A104 104 0 1 0 216.16 164.97 A84 84 0 0 1 119.63 30.30 Z" fill="#A7B8A7" />
-            <path d="M140 72 A15.12 15.12 0 1 1 167.72 84.56 L140.84 114.8 L171.92 114.8" fill="none" stroke="#F4EFE8" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M184.52 66.08 L193.76 56.84 L193.76 114.8" fill="none" stroke="#F4EFE8" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
-          </g>
-        </svg>
-        <figcaption class="hero-shape-label"><i class="fa-regular fa-moon"></i> 20:00 – 23:00</figcaption>
-      </figure>
-    </section>
-
-    <!-- FRANJA DE SERVICIOS PRINCIPALES -->
-    <section class="ritual-strip" aria-label="Servicios principales">
-      <ul class="shell ritual-list">
-        <li><a href="#servicios"><i class="fa-solid fa-person-running" aria-hidden="true"></i><span><strong>Masaje deportivo</strong><small>Recupera</small></span></a></li>
-        <li><a href="#servicios"><i class="fa-solid fa-spa" aria-hidden="true"></i><span><strong>Antiestrés</strong><small>Suelta</small></span></a></li>
-        <li><a href="#servicios"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i><span><strong>Descontracturante</strong><small>Libera</small></span></a></li>
-        <li><a href="#servicios"><i class="fa-solid fa-leaf" aria-hidden="true"></i><span><strong>Acupuntura y tecnología</strong><small>Complementa</small></span></a></li>
-      </ul>
     </section>
 
     <!-- QUIÉN SOY -->
-    <section id="quien-soy" class="section section-dark" data-reveal>
-      <div class="shell split">
-        <div class="split-text">
-          <p class="kicker reveal">Quién soy</p>
-          <h2 class="reveal">Un masaje pensado para personas reales, no solo para atletas.</h2>
-          <p class="reveal">
-            Soy <strong>Oscar Mauricio Hernández Caballero</strong>, masajista certificado por la UNAM con
-            especialización en masaje atlético deportivo y masaje somático. Mi formación y experiencia me permiten
-            ofrecer una atención precisa, basada en técnicas profesionales que buscan algo más que aliviar la tensión:
-            acompañarte a construir un cuerpo más funcional y una vida diaria con menos tensión.
-          </p>
-          <p class="reveal">
-            He trabajado con <strong>deportistas de alto rendimiento, maratonistas, equipos universitarios de halterofilia,
-            powerlifters, taekwondo</strong> y también con personas que pasan muchas horas sentadas, cargan peso, manejan,
-            cuidan de otros o simplemente viven con estrés constante. El masaje es una herramienta poderosa para todas las
-            personas, sin importar su edad o nivel deportivo.
-          </p>
-          <p class="reveal">
-            Mi compromiso es que cada sesión sea clara, honesta y orientada a resultados, explicándote qué estamos
-            trabajando, por qué lo hacemos y cómo puedes seguir cuidándote fuera de la camilla.
-          </p>
-
-          <aside class="focus-card reveal">
-            <h3>Enfoque de Wellness 21PM</h3>
-            <p>
-              Wellness 21PM nace con una idea sencilla: <strong>el autocuidado no es un lujo, es una necesidad</strong>.
+    <section id="quien-soy" class="about" data-reveal>
+      <div class="about-blob">
+        <div class="shell about-grid">
+          <div class="about-art reveal">
+            <figure class="arch arch--about">
+              <img src="img/fotos/velas-toallas.webp" alt="Toalla, velas encendidas y piedras para masaje"
+                   width="1000" height="667" loading="lazy" />
+            </figure>
+            <span class="clay-bowl" aria-hidden="true"></span>
+          </div>
+          <div class="about-text">
+            <p class="eyebrow eyebrow--light reveal">Tu terapeuta</p>
+            <h2 class="title title--light reveal">Quién soy</h2>
+            <p class="lede reveal">Un masaje pensado para personas reales, no solo para atletas.</p>
+            <p class="reveal">
+              Soy <strong>Oscar Mauricio Hernández Caballero</strong>, masajista certificado por la UNAM con
+              especialización en masaje atlético deportivo y masaje somático. Mi formación y experiencia me permiten
+              ofrecer una atención precisa, basada en técnicas profesionales que buscan algo más que aliviar la tensión:
+              acompañarte a construir un cuerpo más funcional y una vida diaria con menos tensión.
             </p>
-            <p>
-              Combinamos principios de <strong>Medicina Tradicional China</strong> (incluyendo el apoyo del Wuxing) con
-              masaje terapéutico y herramientas tecnológicas modernas para potenciar los resultados.
+            <p class="reveal">
+              He trabajado con <strong>deportistas de alto rendimiento, maratonistas, equipos universitarios de halterofilia,
+              powerlifters, taekwondo</strong> y también con personas que pasan muchas horas sentadas, cargan peso, manejan,
+              cuidan de otros o simplemente viven con estrés constante. El masaje es una herramienta poderosa para todas las
+              personas, sin importar su edad o nivel deportivo.
             </p>
-            <ul class="leaf-list">
-              <li><i class="fa-solid fa-leaf" aria-hidden="true"></i> Masaje como parte de tu estilo de vida, no solo cuando hay dolor.</li>
-              <li><i class="fa-solid fa-leaf" aria-hidden="true"></i> Acompañamiento fuera de sesión con ejercicios y recomendaciones.</li>
-              <li><i class="fa-solid fa-leaf" aria-hidden="true"></i> Enfoque integral: físico, emocional y de rendimiento.</li>
-            </ul>
-          </aside>
+            <p class="reveal">
+              Mi compromiso es que cada sesión sea clara, honesta y orientada a resultados, explicándote qué estamos
+              trabajando, por qué lo hacemos y cómo puedes seguir cuidándote fuera de la camilla.
+            </p>
+            <p class="signature signature--light reveal" aria-hidden="true">Oscar M. Hernández</p>
+          </div>
         </div>
-
-        <div class="split-side">
-          <article class="therapist-card reveal">
-            <p class="kicker">Tu terapeuta</p>
-            <h3>Oscar Mauricio Hernández Caballero</h3>
-            <p class="therapist-role">
-              Masajista certificado por la UNAM con especialización en masaje atlético deportivo y masaje somático.
-            </p>
-            <ul class="leaf-list">
-              <li><i class="fa-solid fa-spa" aria-hidden="true"></i> Acompañamiento a deportistas de alto rendimiento y maratonistas.</li>
-              <li><i class="fa-solid fa-spa" aria-hidden="true"></i> Experiencia con equipos universitarios y atletas de fuerza.</li>
-              <li><i class="fa-solid fa-spa" aria-hidden="true"></i> Atención personalizada, humana y orientada a resultados.</li>
-            </ul>
-            <p class="therapist-badge"><i class="fa-solid fa-spa" aria-hidden="true"></i> Enfoque integral: cuerpo, mente y estilo de vida.</p>
-            <dl class="therapist-meta">
-              <div>
-                <dt>Especialidad</dt>
-                <dd>Masaje atlético deportivo · Masaje somático</dd>
-              </div>
-              <div>
-                <dt>Atención</dt>
-                <dd>Deportistas, trabajadores, personas mayores y público en general</dd>
-              </div>
-            </dl>
-          </article>
-
-
-        </div>
+        <svg class="wave wave--bottom" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 90V58c120-20 240 22 380 10s320-52 560-36 340 14 500-4V90z"/>
+        </svg>
       </div>
-    </section>
 
-    <!-- DIFERENCIA: texto · imagen · proceso · tarjeta oscura -->
-    <section id="diferencia" class="section" data-reveal>
-      <div class="shell quad">
-        <div class="quad-text">
-          <p class="kicker reveal">Qué me diferencia</p>
-          <h2 class="reveal">Más que un masaje suelto, un acompañamiento real.</h2>
-          <p class="reveal">
-            No solo “te doy un masaje y ya”. Buscamos entender qué haces en tu día a día,
-            qué hábitos te están pasando factura y qué necesitas para sentirte mejor en serio.
+      <div class="shell about-cards">
+        <article class="therapist-card reveal">
+          <p class="eyebrow">Tu terapeuta</p>
+          <h3>Oscar Mauricio Hernández Caballero</h3>
+          <p class="therapist-role">
+            Masajista certificado por la UNAM con especialización en masaje atlético deportivo y masaje somático.
           </p>
-          <a href="#contacto" class="text-link reveal">Agenda tu sesión <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-
-        <figure class="quad-image reveal">
-          <img src="img/hojas-detalle.jpg" alt="Hojas y flores de eucalipto" width="1100" height="697" loading="lazy" />
-        </figure>
-
-        <ul class="process">
-          <li class="reveal">
-            <span class="process-icon"><i class="fa-solid fa-user-check" aria-hidden="true"></i></span>
-            <div>
-              <h3>Atención uno a uno</h3>
-              <p>Sesiones personalizadas, sin prisas ni cadenas de spa. Espacio tranquilo, pensado para que realmente puedas soltar tensión.</p>
-            </div>
-          </li>
-          <li class="reveal">
-            <span class="process-icon"><i class="fa-solid fa-arrows-spin" aria-hidden="true"></i></span>
-            <div>
-              <h3>Enfoque integral</h3>
-              <p>Combinamos masaje manual con tecnologías como presoterapia, pistola de masaje o acupuntura según tu caso.</p>
-            </div>
-          </li>
-          <li class="reveal">
-            <span class="process-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></span>
-            <div>
-              <h3>Trabajo físico y emocional</h3>
-              <p>No solo atendemos músculos y articulaciones; también consideramos cómo te afecta el estrés, la ansiedad y las preocupaciones del día a día.</p>
-            </div>
-          </li>
-          <li class="reveal">
-            <span class="process-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></span>
-            <div>
-              <h3>Plan de seguimiento sencillo</h3>
-              <p>Te doy recomendaciones fáciles de aplicar fuera de la camilla para que el efecto del masaje dure más tiempo.</p>
-            </div>
-          </li>
-        </ul>
-
-        <aside class="book-card reveal">
-          <h3>Para quién es Wellness 21PM</h3>
-          <ul class="leaf-list">
-            <li><i class="fa-solid fa-laptop" aria-hidden="true"></i> Personas que pasan muchas horas sentadas o frente a la computadora.</li>
-            <li><i class="fa-solid fa-dumbbell" aria-hidden="true"></i> Quienes entrenan fuerte (gym, running, maratón) y necesitan recuperar bien.</li>
-            <li><i class="fa-solid fa-heart-circle-bolt" aria-hidden="true"></i> Personas con alto nivel de estrés que ya sienten que el cuerpo “no aguanta igual”.</li>
-            <li><i class="fa-solid fa-person-walking" aria-hidden="true"></i> Personas mayores o con movilidad reducida que quieren sentirse más ligeras.</li>
+          <ul class="pebble-list">
+            <li><span class="pebble"><svg class="ico"><use href="#i-medal"/></svg></span> Acompañamiento a deportistas de alto rendimiento y maratonistas.</li>
+            <li><span class="pebble"><svg class="ico"><use href="#i-weight"/></svg></span> Experiencia con equipos universitarios y atletas de fuerza.</li>
+            <li><span class="pebble"><svg class="ico"><use href="#i-hand"/></svg></span> Atención personalizada, humana y orientada a resultados.</li>
           </ul>
-          <a href="#contacto" class="btn btn-light">Haz tiempo para ti <i class="fa-solid fa-arrow-right btn-arrow" aria-hidden="true"></i></a>
+          <dl class="therapist-meta">
+            <div>
+              <dt>Especialidad</dt>
+              <dd>Masaje atlético deportivo · Masaje somático</dd>
+            </div>
+            <div>
+              <dt>Atención</dt>
+              <dd>Deportistas, trabajadores, personas mayores y público en general</dd>
+            </div>
+          </dl>
+          <p class="therapist-badge"><svg class="ico" aria-hidden="true"><use href="#i-yin"/></svg> Enfoque integral: cuerpo, mente y estilo de vida.</p>
+        </article>
+
+        <aside class="enfoque-card reveal">
+          <p class="eyebrow eyebrow--light">Enfoque</p>
+          <h3>Enfoque de Wellness 21PM</h3>
+          <p>
+            Wellness 21PM nace con una idea sencilla: <strong>el autocuidado no es un lujo, es una necesidad</strong>.
+          </p>
+          <p>
+            Combinamos principios de <strong>Medicina Tradicional China</strong> (incluyendo el apoyo del Wuxing) con
+            masaje terapéutico y herramientas tecnológicas modernas para potenciar los resultados.
+          </p>
+          <ul class="leaf-list">
+            <li><svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg> Masaje como parte de tu estilo de vida, no solo cuando hay dolor.</li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg> Acompañamiento fuera de sesión con ejercicios y recomendaciones.</li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg> Enfoque integral: físico, emocional y de rendimiento.</li>
+          </ul>
         </aside>
       </div>
     </section>
 
     <!-- SERVICIOS -->
-    <section id="servicios" class="section section-mist" data-reveal>
+    <section id="servicios" class="section" data-reveal>
       <div class="shell">
-        <div class="section-head">
-          <p class="kicker reveal">Servicios</p>
-          <h2 class="reveal">Todo lo que podemos trabajar en sesión.</h2>
+        <header class="sec-head sec-head--center">
+          <p class="eyebrow eyebrow--center reveal">Lo que hago</p>
+          <h2 class="title reveal">Servicios</h2>
+          <p class="lede reveal">Todo lo que podemos trabajar en sesión.</p>
           <p class="reveal">
             Desde un masaje antiestrés para soltar tensión acumulada hasta sesiones completas de recuperación con
             presoterapia, láser y acupuntura. Elegimos las técnicas según tu caso, no al revés.
           </p>
-        </div>
+        </header>
 
-        <div class="services">
-          <article class="service reveal">
-            <i class="fa-solid fa-person-running" aria-hidden="true"></i>
+        <ul class="work">
+          <li class="work-card reveal">
+            <a href="#svc-deportivo">
+              <figure><img src="img/fotos/circulo-deportivo.webp" alt="Masaje de recuperación a un deportista sobre camilla" width="560" height="560" loading="lazy" /></figure>
+              <span class="work-label">Recupera</span>
+              <h3>Deportivo</h3>
+              <span class="work-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+          <li class="work-card reveal">
+            <a href="#svc-antiestres">
+              <figure><img src="img/fotos/circulo-antiestres.webp" alt="Piedra caliente sobre la espalda durante un masaje" width="560" height="560" loading="lazy" /></figure>
+              <span class="work-label">Suelta</span>
+              <h3>Antiestrés</h3>
+              <span class="work-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+          <li class="work-card reveal">
+            <a href="#svc-descontracturante">
+              <figure><img src="img/fotos/circulo-descontracturante.webp" alt="Manos de masajista presionando el antebrazo" width="560" height="560" loading="lazy" /></figure>
+              <span class="work-label">Libera</span>
+              <h3>Descontracturante</h3>
+              <span class="work-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+          <li class="work-card reveal">
+            <a href="#svc-acupuntura">
+              <figure><img src="img/fotos/circulo-acupuntura.webp" alt="Estuche con agujas de acupuntura" width="560" height="560" loading="lazy" /></figure>
+              <span class="work-label">Complementa</span>
+              <h3>Acupuntura</h3>
+              <span class="work-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="svc-index">
+          <article class="svc reveal" id="svc-deportivo">
+            <span class="svc-num" aria-hidden="true">01</span>
+            <span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-run"/></svg></span>
             <div>
               <h3>Masaje atlético deportivo</h3>
               <p>Orientado a rendimiento, recuperación post-entrenamiento y prevención de lesiones.</p>
@@ -389,8 +429,9 @@
               </ul>
             </div>
           </article>
-          <article class="service reveal">
-            <i class="fa-solid fa-spa" aria-hidden="true"></i>
+          <article class="svc reveal" id="svc-antiestres">
+            <span class="svc-num" aria-hidden="true">02</span>
+            <span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-stones"/></svg></span>
             <div>
               <h3>Masaje antiestrés</h3>
               <p>Trabajo profundo y a la vez relajante para soltar tensión acumulada en cuello, espalda y hombros.</p>
@@ -400,8 +441,9 @@
               </ul>
             </div>
           </article>
-          <article class="service reveal">
-            <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+          <article class="svc reveal" id="svc-descontracturante">
+            <span class="svc-num" aria-hidden="true">03</span>
+            <span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-hand"/></svg></span>
             <div>
               <h3>Masaje descontracturante</h3>
               <p>Enfoque en puntos de dolor, contracturas y rigidez muscular que limitan tu día a día.</p>
@@ -411,8 +453,9 @@
               </ul>
             </div>
           </article>
-          <article class="service reveal">
-            <i class="fa-solid fa-wind" aria-hidden="true"></i>
+          <article class="svc reveal">
+            <span class="svc-num" aria-hidden="true">04</span>
+            <span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-legs"/></svg></span>
             <div>
               <h3>Presoterapia</h3>
               <p>Compresión controlada en piernas que ayuda a aliviar la sensación de pesadez y cansancio.</p>
@@ -422,43 +465,49 @@
               </ul>
             </div>
           </article>
-          <article class="service reveal">
-            <i class="fa-solid fa-yin-yang" aria-hidden="true"></i>
+          <article class="svc reveal" id="svc-acupuntura">
+            <span class="svc-num" aria-hidden="true">05</span>
+            <span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-needle"/></svg></span>
             <div>
               <h3>Acupuntura y electroacupuntura</h3>
               <p>Estimulación de puntos específicos como apoyo a la relajación y a la recuperación muscular.</p>
             </div>
           </article>
-          <article class="service reveal">
-            <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+          <article class="svc reveal">
+            <span class="svc-num" aria-hidden="true">06</span>
+            <span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-bolt"/></svg></span>
             <div>
               <h3>TENS</h3>
               <p>Estimulación eléctrica suave como complemento del masaje para relajar la musculatura y facilitar el movimiento.</p>
             </div>
           </article>
-          <article class="service reveal">
-            <i class="fa-solid fa-circle-dot" aria-hidden="true"></i>
+          <article class="svc reveal">
+            <span class="svc-num" aria-hidden="true">07</span>
+            <span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-cup"/></svg></span>
             <div>
               <h3>Ventosas</h3>
               <p>Técnica de succión para trabajar la tensión profunda y dar sensación de soltura.</p>
             </div>
           </article>
-          <article class="service reveal">
-            <i class="fa-solid fa-temperature-arrow-up" aria-hidden="true"></i>
+          <article class="svc reveal">
+            <span class="svc-num" aria-hidden="true">08</span>
+            <span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-heat"/></svg></span>
             <div>
               <h3>Pistola de infrarrojo y de percusión</h3>
               <p>Apoyo térmico y mecánico para relajar la musculatura profunda y aliviar la sensación de rigidez.</p>
             </div>
           </article>
-          <article class="service reveal">
-            <i class="fa-solid fa-wave-square" aria-hidden="true"></i>
+          <article class="svc reveal">
+            <span class="svc-num" aria-hidden="true">09</span>
+            <span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-laser"/></svg></span>
             <div>
               <h3>Láser 808 y 650 nm</h3>
               <p>Tecnología complementaria al masaje como apoyo a la recuperación muscular.</p>
             </div>
           </article>
-          <article class="service reveal">
-            <i class="fa-solid fa-route" aria-hidden="true"></i>
+          <article class="svc reveal">
+            <span class="svc-num" aria-hidden="true">10</span>
+            <span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-path"/></svg></span>
             <div>
               <h3>Planes de seguimiento</h3>
               <p>Rutinas, ejercicios y recomendaciones personalizadas para que el avance continúe fuera de sesión.</p>
@@ -468,16 +517,84 @@
       </div>
     </section>
 
+    <!-- QUÉ ME DIFERENCIA -->
+    <section id="diferencia" class="approach" data-reveal>
+      <div class="shell approach-head">
+        <div>
+          <p class="eyebrow reveal">Qué me diferencia</p>
+          <h2 class="title reveal">La diferencia</h2>
+          <p class="lede reveal">Más que un masaje suelto, un acompañamiento real.</p>
+          <p class="reveal">
+            No solo “te doy un masaje y ya”. Buscamos entender qué haces en tu día a día,
+            qué hábitos te están pasando factura y qué necesitas para sentirte mejor en serio.
+          </p>
+        </div>
+        <figure class="arch arch--side reveal">
+          <img src="img/fotos/toallas-aceite.webp" alt="Toallas enrolladas y aceites para masaje"
+               width="1000" height="667" loading="lazy" />
+        </figure>
+      </div>
+
+      <div class="approach-band">
+        <svg class="wave wave--top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+          <path class="wave-split" d="M0 90V40c180-40 360-44 560-22s420 40 600 18 220-30 280-26v80z"/>
+        </svg>
+        <div class="approach-inner">
+          <div class="approach-steps">
+            <p class="eyebrow eyebrow--light reveal">Mi forma de trabajar</p>
+            <ol class="steps">
+              <li class="reveal">
+                <span class="step-stone"><svg class="ico" aria-hidden="true"><use href="#i-person"/></svg></span>
+                <span class="step-num" aria-hidden="true">01</span>
+                <h3>Atención uno a uno</h3>
+                <p>Sesiones personalizadas, sin prisas ni cadenas de spa. Espacio tranquilo, pensado para que realmente puedas soltar tensión.</p>
+              </li>
+              <li class="reveal">
+                <span class="step-stone"><svg class="ico" aria-hidden="true"><use href="#i-yin"/></svg></span>
+                <span class="step-num" aria-hidden="true">02</span>
+                <h3>Enfoque integral</h3>
+                <p>Combinamos masaje manual con tecnologías como presoterapia, pistola de masaje o acupuntura según tu caso.</p>
+              </li>
+              <li class="reveal">
+                <span class="step-stone"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></span>
+                <span class="step-num" aria-hidden="true">03</span>
+                <h3>Trabajo físico y emocional</h3>
+                <p>No solo atendemos músculos y articulaciones; también consideramos cómo te afecta el estrés, la ansiedad y las preocupaciones del día a día.</p>
+              </li>
+              <li class="reveal">
+                <span class="step-stone"><svg class="ico" aria-hidden="true"><use href="#i-path"/></svg></span>
+                <span class="step-num" aria-hidden="true">04</span>
+                <h3>Plan de seguimiento sencillo</h3>
+                <p>Te doy recomendaciones fáciles de aplicar fuera de la camilla para que el efecto del masaje dure más tiempo.</p>
+              </li>
+            </ol>
+          </div>
+
+          <div class="approach-who reveal">
+            <h3>Para quién es Wellness 21PM</h3>
+            <ul class="who-list">
+              <li><span class="dot-ico"><svg class="ico" aria-hidden="true"><use href="#i-laptop"/></svg></span> Personas que pasan muchas horas sentadas o frente a la computadora.</li>
+              <li><span class="dot-ico"><svg class="ico" aria-hidden="true"><use href="#i-weight"/></svg></span> Quienes entrenan fuerte (gym, running, maratón) y necesitan recuperar bien.</li>
+              <li><span class="dot-ico"><svg class="ico" aria-hidden="true"><use href="#i-mind"/></svg></span> Personas con alto nivel de estrés que ya sienten que el cuerpo “no aguanta igual”.</li>
+              <li><span class="dot-ico"><svg class="ico" aria-hidden="true"><use href="#i-walk"/></svg></span> Personas mayores o con movilidad reducida que quieren sentirse más ligeras.</li>
+            </ul>
+            <a href="#contacto" class="text-link">Haz tiempo para ti <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- PAQUETES -->
-    <section id="precios" class="section" data-reveal>
+    <section id="precios" class="section plans-sec" data-reveal>
       <div class="shell">
-        <div class="section-head">
-          <p class="kicker reveal">Paquetes</p>
-          <h2 class="reveal">Elige el nivel de atención que necesitas ahora.</h2>
+        <header class="sec-head sec-head--center">
+          <p class="eyebrow eyebrow--center reveal">Elige tu sesión</p>
+          <h2 class="title reveal">Paquetes</h2>
+          <p class="lede reveal">Elige el nivel de atención que necesitas ahora.</p>
           <p class="reveal">
             Todos los paquetes están pensados para que aproveches al máximo cada minuto de la sesión y tengas claro qué incluye.
           </p>
-        </div>
+        </header>
 
         <div class="guide reveal">
           <div class="guide-intro">
@@ -485,34 +602,39 @@
             <p>
               Si vienes con prisa, aquí tienes un mapa rápido para ubicarte. Después puedes abrir el asistente o escribirme por WhatsApp si sigues con dudas.
             </p>
+            <p class="guide-hint">Toca lo que sientes hoy y te marco los paquetes que te convienen.</p>
           </div>
           <div class="guide-grid">
-            <div class="guide-item">
-              <span class="guide-icon"><i class="fa-solid fa-user-injured" aria-hidden="true"></i></span>
+            <article class="guide-item">
+              <span class="pebble pebble--blush"><svg class="ico" aria-hidden="true"><use href="#i-hand"/></svg></span>
               <h4>Dolor localizado</h4>
               <p>Dolor en <strong>cuello, hombros o espalda baja</strong> por computadora, estrés o malas posturas.</p>
               <p class="guide-reco">Empezar con: <strong>Paquete Esencial</strong> o <strong>Masaje Manual de Cuerpo Completo</strong>.</p>
-            </div>
-            <div class="guide-item">
-              <span class="guide-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></span>
+              <button type="button" class="guide-pick" data-guide="esencial manual" aria-pressed="false">Esto siento</button>
+            </article>
+            <article class="guide-item">
+              <span class="pebble pebble--blush"><svg class="ico" aria-hidden="true"><use href="#i-mind"/></svg></span>
               <h4>Estrés y descanso</h4>
               <p>Mucho <strong>estrés, ansiedad</strong> o <strong>problemas para dormir bien</strong>.</p>
               <p class="guide-reco">Empezar con: <strong>Masaje Manual de Cuerpo Completo</strong> o <strong>Paquete Renacer</strong>.</p>
-            </div>
-            <div class="guide-item">
-              <span class="guide-icon"><i class="fa-solid fa-person-running" aria-hidden="true"></i></span>
+              <button type="button" class="guide-pick" data-guide="manual renacer" aria-pressed="false">Esto siento</button>
+            </article>
+            <article class="guide-item">
+              <span class="pebble pebble--blush"><svg class="ico" aria-hidden="true"><use href="#i-run"/></svg></span>
               <h4>Piernas cansadas / deporte</h4>
               <p><strong>Piernas pesadas</strong>, mala circulación o <strong>entrenamientos intensos</strong> (gym, running, maratón).</p>
               <p class="guide-reco">Empezar con: <strong>Paquete Plus</strong> o <strong>Paquete Renacer</strong> con enfoque deportivo.</p>
-            </div>
+              <button type="button" class="guide-pick" data-guide="plus renacer" aria-pressed="false">Esto siento</button>
+            </article>
           </div>
         </div>
 
-        <div class="plans">
-          <article class="plan reveal">
-            <span class="plan-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></span>
+        <div class="plans" aria-live="polite">
+          <article class="plan reveal" data-plan="esencial">
+            <span class="plan-match" aria-hidden="true">Para ti</span>
+            <span class="plan-icon"><svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg></span>
             <h3>Paquete Esencial</h3>
-            <p class="plan-duration">20 – 35 minutos</p>
+            <p class="plan-duration"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> 20 – 35 minutos</p>
             <p>Enfoque en una sola zona específica (cuello, espalda baja, hombro, rodilla, ciática, etc.).</p>
             <ul class="check-list">
               <li>Masaje profundo en zona específica.</li>
@@ -523,10 +645,11 @@
             <p class="plan-ideal">Ideal para dolor puntual o molestias recientes.</p>
           </article>
 
-          <article class="plan reveal">
-            <span class="plan-icon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+          <article class="plan reveal" data-plan="manual">
+            <span class="plan-match" aria-hidden="true">Para ti</span>
+            <span class="plan-icon"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></span>
             <h3>Masaje Manual de Cuerpo Completo</h3>
-            <p class="plan-duration">50 – 70 minutos</p>
+            <p class="plan-duration"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> 50 – 70 minutos</p>
             <p>Sesión completa sin aparatos, enfocada en estrés generalizado, tensión acumulada y descanso profundo.</p>
             <ul class="check-list">
               <li>Masaje de cuerpo completo con técnicas avanzadas.</li>
@@ -537,11 +660,12 @@
             <p class="plan-ideal">Ideal si llevas tiempo posponiendo tu autocuidado.</p>
           </article>
 
-          <article class="plan plan--featured reveal">
+          <article class="plan plan--featured reveal" data-plan="plus">
             <span class="plan-badge">Más elegido</span>
-            <span class="plan-icon"><i class="fa-solid fa-star-and-crescent" aria-hidden="true"></i></span>
+            <span class="plan-match" aria-hidden="true">Para ti</span>
+            <span class="plan-icon"><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg></span>
             <h3>Paquete Plus</h3>
-            <p class="plan-duration">60 minutos</p>
+            <p class="plan-duration"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> 60 minutos</p>
             <p>Combinación de masaje manual y tecnología para sobrecarga por ejercicio o trabajo físico intenso.</p>
             <ul class="check-list">
               <li>Masaje profundo.</li>
@@ -553,10 +677,11 @@
             <p class="plan-ideal">Ideal para piernas cansadas, dolor lumbar o cervical moderado.</p>
           </article>
 
-          <article class="plan reveal">
-            <span class="plan-icon"><i class="fa-solid fa-fire" aria-hidden="true"></i></span>
+          <article class="plan reveal" data-plan="renacer">
+            <span class="plan-match" aria-hidden="true">Para ti</span>
+            <span class="plan-icon"><svg class="ico" aria-hidden="true"><use href="#i-flame"/></svg></span>
             <h3>Masaje Renacer</h3>
-            <p class="plan-duration">75 minutos</p>
+            <p class="plan-duration"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> 75 minutos</p>
             <p>Paquete integral que reúne todas las técnicas manuales y tecnológicas disponibles.</p>
             <ul class="check-list">
               <li>Masaje de cuerpo completo.</li>
@@ -572,12 +697,13 @@
         </div>
 
         <p class="plans-note reveal">
-          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span class="pebble pebble--sage"><svg class="ico" aria-hidden="true"><use href="#i-house"/></svg></span>
           <span><strong>Servicio a domicilio:</strong> costo adicional según zona y distancia. Pregunta por WhatsApp.</span>
         </p>
 
         <div class="cta-band reveal">
           <div>
+            <p class="script" aria-hidden="true">te ayudo a elegir</p>
             <h3>¿Aún no sabes qué paquete elegir?</h3>
             <p>
               Escríbeme y te ayudo a elegir la combinación ideal de masaje y tecnologías
@@ -585,33 +711,44 @@
             </p>
           </div>
           <a href="https://wa.me/525585662464?text=Hola%20%C3%93scar,%20vengo%20de%20la%20p%C3%A1gina%20Wellness%2021PM%20y%20quiero%20ayuda%20para%20elegir%20el%20mejor%20paquete%20para%20m%C3%AD."
-             class="btn btn-light" target="_blank" rel="noopener noreferrer">
-            Quiero una recomendación <i class="fa-solid fa-arrow-right btn-arrow" aria-hidden="true"></i>
+             class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            Quiero una recomendación <span class="btn-dot" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </div>
       </div>
     </section>
 
+    <!-- Cinta decorativa -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon-track">
+        <span>Calma</span><svg class="ico"><use href="#i-moon"/></svg><span>Movilidad</span><svg class="ico"><use href="#i-leaf"/></svg><span>Descanso</span><svg class="ico"><use href="#i-moon"/></svg><span>Recuperación</span><svg class="ico"><use href="#i-leaf"/></svg><span>Menos tensión</span><svg class="ico"><use href="#i-moon"/></svg>
+        <span>Calma</span><svg class="ico"><use href="#i-moon"/></svg><span>Movilidad</span><svg class="ico"><use href="#i-leaf"/></svg><span>Descanso</span><svg class="ico"><use href="#i-moon"/></svg><span>Recuperación</span><svg class="ico"><use href="#i-leaf"/></svg><span>Menos tensión</span><svg class="ico"><use href="#i-moon"/></svg>
+      </div>
+    </div>
+
     <!-- BENEFICIOS -->
-    <section id="beneficios" class="section section-sand" data-reveal>
-      <div class="shell split split--reverse">
-        <div class="split-text">
-          <p class="kicker reveal">Beneficios</p>
-          <h2 class="reveal">¿Por qué el masaje es tan importante?</h2>
+    <section id="beneficios" class="section benefits" data-reveal>
+      <div class="shell benefits-grid">
+        <div class="benefits-text">
+          <p class="eyebrow reveal">Por qué importa</p>
+          <h2 class="title reveal">Beneficios</h2>
+          <p class="lede reveal">¿Por qué el masaje es tan importante?</p>
           <p class="reveal">
             El masaje te ayuda a sentirte mejor: alivia la sensación de tensión, favorece la movilidad,
             el descanso y la relajación. No necesitas estar lesionado para recibirlo; de hecho, los mejores
             resultados se dan cuando se vuelve parte natural de tu estilo de vida.
           </p>
-          <ul class="benefit-list reveal">
-            <li><i class="fa-solid fa-leaf" aria-hidden="true"></i> Sensación de calma y menos estrés.</li>
-            <li><i class="fa-solid fa-leaf" aria-hidden="true"></i> Mayor movilidad y flexibilidad.</li>
-            <li><i class="fa-solid fa-leaf" aria-hidden="true"></i> Mejor descanso y calidad del sueño.</li>
-            <li><i class="fa-solid fa-leaf" aria-hidden="true"></i> Mejor recuperación muscular después del ejercicio.</li>
-            <li><i class="fa-solid fa-leaf" aria-hidden="true"></i> Disminución de tensiones acumuladas.</li>
-          </ul>
+          <ol class="benefit-list reveal">
+            <li>Sensación de calma y menos estrés.</li>
+            <li>Mayor movilidad y flexibilidad.</li>
+            <li>Mejor descanso y calidad del sueño.</li>
+            <li>Mejor recuperación muscular después del ejercicio.</li>
+            <li>Disminución de tensiones acumuladas.</li>
+          </ol>
         </div>
-        <aside class="soft-card reveal">
+        <aside class="benefits-arch reveal">
+          <svg class="ico benefits-ico" aria-hidden="true"><use href="#i-sun"/></svg>
+          <p class="eyebrow eyebrow--center">Para todas las personas</p>
           <h3>¿Para quién es?</h3>
           <p>
             Para todas las personas que entrenan, trabajan, estudian, manejan, cargan, cuidan, corren, pasan muchas horas
@@ -625,38 +762,48 @@
     </section>
 
     <!-- OPINIONES -->
-    <section id="opiniones" class="section section-dark section--tight" data-reveal>
+    <section id="opiniones" class="section reviews-sec" data-reveal>
       <div class="shell reviews">
-        <p class="reviews-score reveal" aria-hidden="true">5.0</p>
+        <div class="stamp reveal" aria-hidden="true">
+          <svg viewBox="0 0 200 200" class="stamp-ring">
+            <defs><path id="stamp-path" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs>
+            <text><textPath href="#stamp-path">Reseñas en Google · cinco estrellas ·</textPath></text>
+          </svg>
+          <span class="stamp-score">5.0</span>
+          <span class="stamp-stars"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span>
+        </div>
         <div class="reviews-text">
-          <p class="kicker reveal">Opiniones</p>
+          <p class="eyebrow reveal">Opiniones</p>
           <h2 class="reveal">Calificación de 5.0 en Google</h2>
           <p class="reveal">
             Lee lo que dicen las personas que ya se atendieron con Oscar, directo en su ficha de Google Maps.
           </p>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Wellness21pm&amp;query_place_id=ChIJm3xhZgoBzoURJrXIxe4qvBI"
+             class="btn btn-ghost reveal" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-google" aria-hidden="true"></i> Ver reseñas en Google
+          </a>
         </div>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=Wellness21pm&amp;query_place_id=ChIJm3xhZgoBzoURJrXIxe4qvBI"
-           class="btn btn-light reveal" target="_blank" rel="noopener noreferrer">
-          <i class="fa-brands fa-google" aria-hidden="true"></i> Ver reseñas en Google
-        </a>
       </div>
     </section>
 
-    <!-- MINI BLOG -->
-    <section id="blog" class="section" data-reveal>
+    <!-- NOTAS -->
+    <section id="blog" class="section notes-sec" data-reveal>
       <div class="shell">
-        <div class="section-head">
-          <p class="kicker reveal">Aprende un poco más</p>
-          <h2 class="reveal">Notas rápidas para cuidar tu cuerpo día a día.</h2>
+        <header class="sec-head sec-head--center">
+          <p class="eyebrow eyebrow--center reveal">Notas</p>
+          <h2 class="title reveal">Aprende un poco más</h2>
+          <p class="lede reveal">Notas rápidas para cuidar tu cuerpo día a día.</p>
           <p class="reveal">
             No necesitas memorizar teoría complicada. Estas ideas sencillas pueden ayudarte a entender mejor lo que sientes
             y a tomar mejores decisiones sobre tu cuerpo.
           </p>
-        </div>
+        </header>
 
         <div class="notes">
           <article class="note reveal">
-            <h3><i class="fa-solid fa-computer" aria-hidden="true"></i> Dolor de cuello por computadora</h3>
+            <span class="note-tape" aria-hidden="true"></span>
+            <span class="note-num" aria-hidden="true">01</span>
+            <h3>Dolor de cuello por computadora</h3>
             <p>
               Pasar muchas horas sentado frente a la pantalla hace que la cabeza vaya “viajando” hacia adelante,
               sobrecargando músculos del cuello y la parte alta de la espalda.
@@ -666,7 +813,9 @@
             </p>
           </article>
           <article class="note reveal">
-            <h3><i class="fa-solid fa-shoe-prints" aria-hidden="true"></i> Piernas cansadas y circulación</h3>
+            <span class="note-tape" aria-hidden="true"></span>
+            <span class="note-num" aria-hidden="true">02</span>
+            <h3>Piernas cansadas y circulación</h3>
             <p>
               Estar muchas horas de pie o sentado dificulta el retorno venoso, por eso las piernas se sienten pesadas o hinchadas al final del día.
             </p>
@@ -675,7 +824,9 @@
             </p>
           </article>
           <article class="note reveal">
-            <h3><i class="fa-solid fa-bolt" aria-hidden="true"></i> Estrés físico vs. emocional</h3>
+            <span class="note-tape" aria-hidden="true"></span>
+            <span class="note-num" aria-hidden="true">03</span>
+            <h3>Estrés físico vs. emocional</h3>
             <p>
               A veces el cuerpo duele no solo por carga física, sino por todo lo que traemos en la cabeza.
               El estrés sostenido hace que la musculatura esté en alerta constante.
@@ -689,16 +840,18 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section section-mist" data-reveal>
+    <section id="faq" class="section faq-sec" data-reveal>
       <div class="shell faq-layout">
         <div class="faq-head">
-          <p class="kicker reveal">Preguntas frecuentes</p>
-          <h2 class="reveal">Resolvamos las dudas importantes antes de tu cita.</h2>
-          <img src="img/brand/luna21-color.svg" alt="" class="faq-mark reveal" width="120" height="120" loading="lazy" />
+          <span class="faq-blob" aria-hidden="true">?</span>
+          <p class="eyebrow reveal">Dudas</p>
+          <h2 class="title reveal">Preguntas frecuentes</h2>
+          <p class="lede reveal">Resolvamos las dudas importantes antes de tu cita.</p>
+          <p class="reveal">¿Tienes otra duda? Abre el asistente o escríbeme por WhatsApp.</p>
         </div>
         <div class="faq-list">
           <details class="faq-item reveal" open>
-            <summary><i class="fa-solid fa-hand-holding-medical" aria-hidden="true"></i> ¿El masaje y la fisioterapia son lo mismo?</summary>
+            <summary>¿El masaje y la fisioterapia son lo mismo?<span class="faq-plus" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span></summary>
             <div class="faq-body">
               <p>
                 No. El masaje trabaja sobre tejido muscular, relajación y movilidad, ayudando a aliviar
@@ -712,7 +865,7 @@
             </div>
           </details>
           <details class="faq-item reveal">
-            <summary><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> ¿Cuántas sesiones necesito?</summary>
+            <summary>¿Cuántas sesiones necesito?<span class="faq-plus" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span></summary>
             <div class="faq-body">
               <p>
                 Depende de tu objetivo: para molestias recientes, a veces una o dos sesiones pueden marcar diferencia;
@@ -721,7 +874,7 @@
             </div>
           </details>
           <details class="faq-item reveal">
-            <summary><i class="fa-solid fa-face-smile" aria-hidden="true"></i> ¿Duele el masaje?</summary>
+            <summary>¿Duele el masaje?<span class="faq-plus" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span></summary>
             <div class="faq-body">
               <p>
                 Algunas técnicas de trabajo profundo pueden generar molestias tolerables, pero nunca se busca un dolor
@@ -730,7 +883,7 @@
             </div>
           </details>
           <details class="faq-item reveal">
-            <summary><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> ¿Qué debo llevar o considerar antes de la sesión?</summary>
+            <summary>¿Qué debo llevar o considerar antes de la sesión?<span class="faq-plus" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span></summary>
             <div class="faq-body">
               <p>
                 Ropa cómoda, haber comido ligero y avisar si tienes alguna condición de salud relevante (diagnóstico médico,
@@ -743,71 +896,108 @@
     </section>
 
     <!-- UBICACIÓN Y HORARIO -->
-    <section id="ubicacion" class="section section-dark" data-reveal>
-      <div class="shell split">
-        <div class="split-text">
-          <p class="kicker reveal">Ubicación y horario</p>
-          <h2 class="reveal">Dónde y cuándo atiendo</h2>
-          <p class="reveal">
-            Consultorio en <strong>Culhuacán CTM, Coyoacán</strong>. Te comparto la ubicación exacta por WhatsApp
-            al confirmar tu cita. También voy <strong>a domicilio</strong> con un costo adicional según la zona.
-          </p>
-          <ul class="leaf-list reveal">
-            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Culhuacán, Coapa, Taxqueña, Coyoacán y Mixcoac.</li>
-            <li><i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Siempre con cita. Pregunta si hay espacio hoy en la noche.</li>
-            <li><i class="fa-solid fa-car" aria-hidden="true"></i> Si llegas en carro, avísame para apartarte lugar de estacionamiento.</li>
-          </ul>
-          <div class="hero-actions reveal">
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=Wellness21pm&amp;query_place_id=ChIJm3xhZgoBzoURJrXIxe4qvBI"
-               class="btn btn-light" target="_blank" rel="noopener noreferrer">
-              <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Cómo llegar
-            </a>
-            <a href="https://wa.me/525585662464?text=Hola%20%C3%93scar,%20%C2%BFtienes%20espacio%20hoy%20en%20la%20noche%3F"
-               class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> ¿Hay espacio hoy?
-            </a>
+    <section id="ubicacion" class="visit" data-reveal>
+      <svg class="wave wave--top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 90V52c200-46 420-50 640-24s400 30 560 6 200-26 240-20v76z"/>
+      </svg>
+      <div class="visit-inner">
+        <div class="shell visit-grid">
+          <div class="visit-text">
+            <p class="eyebrow reveal">Ubicación y horario</p>
+            <h2 class="title reveal">Dónde y cuándo</h2>
+            <p class="reveal">
+              Consultorio en <strong>Culhuacán CTM, Coyoacán</strong>. Te comparto la ubicación exacta por WhatsApp
+              al confirmar tu cita. También voy <strong>a domicilio</strong> con un costo adicional según la zona.
+            </p>
+            <ul class="pebble-list reveal">
+              <li><span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg></span> Culhuacán, Coapa, Taxqueña, Coyoacán y Mixcoac.</li>
+              <li><span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-calendar"/></svg></span> Siempre con cita. Pregunta si hay espacio hoy en la noche.</li>
+              <li><span class="pebble"><svg class="ico" aria-hidden="true"><use href="#i-car"/></svg></span> Si llegas en carro, avísame para apartarte lugar de estacionamiento.</li>
+            </ul>
           </div>
-        </div>
 
-        <div class="hours reveal">
-          <div class="hours-block">
-            <i class="fa-regular fa-sun" aria-hidden="true"></i>
-            <h3>Mañanas</h3>
-            <p>Lunes a domingo de 8:00 a 13:00 h.</p>
+          <figure class="arch arch--visit reveal">
+            <img src="img/fotos/velas-noche.webp" alt="Velas encendidas y rosas blancas en la oscuridad"
+                 width="768" height="683" loading="lazy" />
+          </figure>
+
+          <div class="visit-clock reveal">
+            <svg class="dial" viewBox="0 0 200 200" aria-hidden="true">
+              <circle class="dial-face" cx="100" cy="100" r="92"/>
+              <circle class="dial-track" cx="100" cy="100" r="78"/>
+              <circle class="dial-arc dial-arc--day" cx="100" cy="100" r="78" transform="rotate(-90 100 100)"
+                      stroke-dasharray="102.10 388.00" stroke-dashoffset="-163.36"/>
+              <circle class="dial-arc dial-arc--night" cx="100" cy="100" r="78" transform="rotate(-90 100 100)"
+                      stroke-dasharray="61.26 428.83" stroke-dashoffset="-408.41"/>
+              <text class="dial-num" x="100" y="17">0</text>
+              <text class="dial-num" x="187" y="104">6</text>
+              <text class="dial-num" x="100" y="194">12</text>
+              <text class="dial-num" x="13" y="104">18</text>
+              <g id="dial-hand" class="dial-hand">
+                <line x1="100" y1="100" x2="100" y2="34"/>
+                <circle cx="100" cy="34" r="4"/>
+              </g>
+              <circle class="dial-pin" cx="100" cy="100" r="5"/>
+            </svg>
+            <p class="dial-caption">Ahora en CDMX: <strong data-dial-time>—</strong></p>
+
+            <div class="hours">
+              <div class="hours-block">
+                <span class="pebble pebble--blush"><svg class="ico" aria-hidden="true"><use href="#i-sun"/></svg></span>
+                <div>
+                  <h3>Mañanas</h3>
+                  <p class="hours-time">8:00 – 13:00</p>
+                  <p>Lunes a domingo de 8:00 a 13:00 h.</p>
+                </div>
+              </div>
+              <div class="hours-block">
+                <span class="pebble pebble--olive"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg></span>
+                <div>
+                  <h3>Noches</h3>
+                  <p class="hours-time">20:00 – 23:00</p>
+                  <p>Lunes a domingo de 20:00 a 23:00 h.</p>
+                </div>
+              </div>
+            </div>
+            <p class="open-status" data-open-status role="status">
+              <span class="open-dot" aria-hidden="true"></span>
+              <span data-open-text>Siempre con cita</span>
+            </p>
+            <div class="actions">
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Wellness21pm&amp;query_place_id=ChIJm3xhZgoBzoURJrXIxe4qvBI"
+                 class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+                <svg class="ico" aria-hidden="true"><use href="#i-map"/></svg> Cómo llegar
+              </a>
+              <a href="https://wa.me/525585662464?text=Hola%20%C3%93scar,%20%C2%BFtienes%20espacio%20hoy%20en%20la%20noche%3F"
+                 class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> ¿Hay espacio hoy?
+              </a>
+            </div>
           </div>
-          <div class="hours-block hours-block--night">
-            <i class="fa-regular fa-moon" aria-hidden="true"></i>
-            <h3>Noches</h3>
-            <p>Lunes a domingo de 20:00 a 23:00 h.</p>
-          </div>
-          <p class="open-status open-status--dark" data-open-status role="status">
-            <span class="open-dot" aria-hidden="true"></span>
-            <span data-open-text>Siempre con cita</span>
-          </p>
         </div>
       </div>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="section" data-reveal>
+    <section id="contacto" class="section contact-sec" data-reveal>
       <div class="shell contact">
         <div class="contact-text">
-          <p class="kicker reveal">Contacto</p>
-          <h2 class="reveal">Agenda tu masaje.</h2>
+          <p class="eyebrow reveal">Contacto</p>
+          <h2 class="title reveal">Agenda tu masaje</h2>
           <p class="reveal">
             Cuéntame qué te duele, qué actividad realizas y qué buscas conseguir con la sesión.
             Con esa información puedo proponerte el paquete y enfoque que más te convenga.
           </p>
 
-          <div class="before-card reveal">
-            <h3><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> Antes de tu sesión</h3>
+          <div class="before reveal">
+            <h3>Antes de tu sesión</h3>
             <p>Para que aproveches mejor tu masaje y vengas con tranquilidad, ten en cuenta estas recomendaciones:</p>
             <ul class="before-list">
-              <li><strong>Ropa cómoda:</strong> de preferencia fácil de poner y quitar. Si vienes de la oficina o del gym, puedes traer una muda ligera.</li>
-              <li><strong>Comida:</strong> evita llegar con el estómago completamente lleno; lo ideal es haber comido ligero 1–2 horas antes.</li>
-              <li><strong>Hidratación:</strong> toma agua antes y después de la sesión para sentirte mejor después del masaje.</li>
-              <li><strong>Contraindicaciones:</strong> si tienes fiebre, infección aguda o un diagnóstico médico reciente, avísame antes de agendar.</li>
-              <li><strong>Después del masaje:</strong> es normal sentirte más relajado, con sueño o un poco cansado. Procura no agendar actividades muy demandantes justo después.</li>
+              <li><span class="pebble pebble--blush"><svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg></span><span><strong>Ropa cómoda:</strong> de preferencia fácil de poner y quitar. Si vienes de la oficina o del gym, puedes traer una muda ligera.</span></li>
+              <li><span class="pebble pebble--blush"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span><span><strong>Comida:</strong> evita llegar con el estómago completamente lleno; lo ideal es haber comido ligero 1–2 horas antes.</span></li>
+              <li><span class="pebble pebble--blush"><svg class="ico" aria-hidden="true"><use href="#i-drop"/></svg></span><span><strong>Hidratación:</strong> toma agua antes y después de la sesión para sentirte mejor después del masaje.</span></li>
+              <li><span class="pebble pebble--blush"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></span><span><strong>Contraindicaciones:</strong> si tienes fiebre, infección aguda o un diagnóstico médico reciente, avísame antes de agendar.</span></li>
+              <li><span class="pebble pebble--blush"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg></span><span><strong>Después del masaje:</strong> es normal sentirte más relajado, con sueño o un poco cansado. Procura no agendar actividades muy demandantes justo después.</span></li>
             </ul>
           </div>
 
@@ -823,7 +1013,7 @@
             </div>
             <div>
               <dt>Correo</dt>
-              <dd><a href="mailto:oscar.mau.hdz21@gmail.com">oscar.mau.hdz21@gmail.com</a></dd>
+              <dd><a href="mailto:oscar.mau.hdz21@gmail.com"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg> oscar.mau.hdz21@gmail.com</a></dd>
             </div>
           </dl>
 
@@ -834,6 +1024,7 @@
         </div>
 
         <div class="form-card reveal">
+          <p class="script" aria-hidden="true">tu cita</p>
           <h3>Formulario de cita</h3>
           <form action="https://formsubmit.co/oscar.mau.hdz21@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="Nueva solicitud de cita – Wellness 21PM" />
@@ -863,7 +1054,7 @@
                       placeholder="Por ejemplo: dolor lumbar desde hace 3 meses, entreno 3 veces por semana, paso mucho tiempo sentado..."></textarea>
 
             <button type="submit" class="btn btn-primary btn-full">
-              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              <svg class="ico" aria-hidden="true"><use href="#i-send"/></svg>
               Enviar solicitud
             </button>
             <p class="form-footnote">
@@ -877,42 +1068,52 @@
   </main>
 
   <footer class="site-footer">
-    <ul class="shell footer-values">
-      <li><i class="fa-solid fa-user-check" aria-hidden="true"></i><strong>Uno a uno</strong><span>Sin prisas ni cadenas de spa.</span></li>
-      <li><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><strong>Certificado UNAM</strong><span>Técnica profesional.</span></li>
-      <li><i class="fa-regular fa-moon" aria-hidden="true"></i><strong>Abierto de noche</strong><span>De 20:00 a 23:00 h.</span></li>
-    </ul>
+    <svg class="wave wave--top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 90V30c160 34 360 48 600 26s440-46 600-30 200 22 240 30v34z"/>
+    </svg>
+    <div class="footer-inner">
+      <div class="shell">
+        <div class="footer-top">
+          <img src="img/brand/sello-dorado.webp" alt="Sello de Wellness 21PM" class="footer-seal" width="150" height="150" loading="lazy" />
+          <p class="footer-name">Wellness 21PM</p>
+          <p class="footer-slogan">Tu bienestar a un masaje de distancia</p>
+        </div>
 
-    <div class="shell footer-grid">
-      <div class="footer-brand">
-        <img src="img/brand/luna21-reverse.svg" alt="" class="footer-logo" width="48" height="48" loading="lazy" />
-        <p class="footer-name">Wellness 21PM</p>
-        <p class="footer-slogan">Tu bienestar a un masaje de distancia</p>
-        <p>Masaje deportivo y terapéutico en Culhuacán, Coyoacán.</p>
-      </div>
-      <div class="footer-contact">
-        <p><i class="fa-solid fa-clock" aria-hidden="true"></i> Lunes a domingo, 8:00–13:00 y 20:00–23:00 h, con cita.</p>
-        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Culhuacán, Coapa, Taxqueña, Coyoacán y Mixcoac.</p>
-        <p>
-          <a href="https://wa.me/525585662464" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> 55 8566 2464
-          </a>
-          ·
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=Wellness21pm&amp;query_place_id=ChIJm3xhZgoBzoURJrXIxe4qvBI"
-             target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>
-        </p>
-      </div>
-      <div class="footer-meta">
-        <p>© <span id="year"></span> Wellness 21PM. Todos los derechos reservados.</p>
-        <p class="footer-note">Este sitio no sustituye valoración médica ni fisioterapéutica.</p>
-        <p class="footer-credits">
-          Fotos de eucalipto: Forest &amp; Kim Starr y Ethel Aardvark, CC BY 3.0, vía Wikimedia Commons.
-        </p>
+        <ul class="footer-values">
+          <li><span class="pebble pebble--cream"><svg class="ico" aria-hidden="true"><use href="#i-person"/></svg></span><strong>Uno a uno</strong><span>Sin prisas ni cadenas de spa.</span></li>
+          <li><span class="pebble pebble--cream"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg></span><strong>Certificado UNAM</strong><span>Técnica profesional.</span></li>
+          <li><span class="pebble pebble--cream"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg></span><strong>Abierto de noche</strong><span>De 20:00 a 23:00 h.</span></li>
+        </ul>
+
+        <div class="footer-grid">
+          <div class="footer-contact">
+            <p>Masaje deportivo y terapéutico en Culhuacán, Coyoacán.</p>
+            <p><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> Lunes a domingo, 8:00–13:00 y 20:00–23:00 h, con cita.</p>
+            <p><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Culhuacán, Coapa, Taxqueña, Coyoacán y Mixcoac.</p>
+            <p>
+              <a href="https://wa.me/525585662464" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> 55 8566 2464
+              </a>
+              ·
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Wellness21pm&amp;query_place_id=ChIJm3xhZgoBzoURJrXIxe4qvBI"
+                 target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>
+            </p>
+          </div>
+          <div class="footer-meta">
+            <p>© <span id="year"></span> Wellness 21PM. Todos los derechos reservados.</p>
+            <p class="footer-credits">Este sitio no sustituye valoración médica ni fisioterapéutica.</p>
+            <p class="footer-credits">
+              Fotos ilustrativas: rawpixel (CC0); “Triathlon massage Australia”, Bob Whitehead, CC BY 2.0;
+              “Korean acupuncture needle set”, 국립국어원, CC BY-SA 2.0. Vía Wikimedia Commons.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/extras.js"></script>
 
   <!-- Barra fija de WhatsApp (solo móvil) -->
   <div class="mobile-cta-bar">
