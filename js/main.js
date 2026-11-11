@@ -1,3 +1,6 @@
+// Marca que el JS está activo: las animaciones de entrada solo aplican con JS.
+document.documentElement.classList.add("js");
+
 document.addEventListener("DOMContentLoaded", () => {
   // Año en el footer
   const yearEl = document.getElementById("year");
@@ -10,14 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector(".site-nav");
 
   if (navToggle && nav) {
+    const setMenuOpen = (isOpen) => {
+      nav.classList.toggle("show", isOpen);
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+    };
+
     navToggle.addEventListener("click", () => {
-      nav.classList.toggle("show");
+      setMenuOpen(!nav.classList.contains("show"));
     });
 
     nav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("show");
-      });
+      link.addEventListener("click", () => setMenuOpen(false));
     });
   }
 
@@ -49,14 +56,67 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", onScroll);
   }
 
-  // Texto dinámico en barra fija de WhatsApp (mobile)
+  // Horario real (hora de CDMX): mañanas 8–13 h, noches 20–23 h.
+  const SHIFTS = [
+    { open: 8, close: 13, label: "13:00" },
+    { open: 20, close: 23, label: "23:00" }
+  ];
+
+  const getCdmxTime = () => {
+    const parts = new Intl.DateTimeFormat("es-MX", {
+      timeZone: "America/Mexico_City",
+      hour: "numeric",
+      minute: "numeric",
+      hourCycle: "h23"
+    }).formatToParts(new Date());
+    const value = (type) => Number(parts.find((p) => p.type === type)?.value || 0);
+    return value("hour") + value("minute") / 60;
+  };
+
+  const getOpenState = (now) => {
+    const current = SHIFTS.find((s) => now >= s.open && now < s.close);
+    if (current) {
+      return { isOpen: true, text: `Abierto ahora · hasta las ${current.label} h` };
+    }
+    const next = SHIFTS.find((s) => now < s.open);
+    if (next) {
+      return { isOpen: false, text: `Cerrado ahora · abre hoy a las ${next.open}:00 h` };
+    }
+    return { isOpen: false, text: "Cerrado ahora · abre mañana a las 8:00 h" };
+  };
+
+  const updateOpenStatus = () => {
+    const state = getOpenState(getCdmxTime());
+    document.querySelectorAll("[data-open-status]").forEach((el) => {
+      el.classList.toggle("is-open", state.isOpen);
+      const textEl = el.querySelector("[data-open-text]");
+      if (textEl) textEl.textContent = state.text;
+    });
+    return state;
+  };
+
+  try {
+    updateOpenStatus();
+    setInterval(updateOpenStatus, 60000);
+  } catch (error) {
+    // Si el navegador no soporta zonas horarias, se queda el horario fijo del HTML.
+  }
+
+  // Texto dinámico en barra fija de WhatsApp (móvil), según el horario de atención
   const mobileCtaText = document.querySelector(".mobile-cta-text");
   if (mobileCtaText) {
-    const hour = new Date().getHours();
-    if (hour >= 6 && hour < 12) {
-      mobileCtaText.textContent = "¿Agendamos tu sesión para hoy?";
-    } else if (hour >= 12 && hour < 19) {
-      mobileCtaText.textContent = "¿Te agendo una sesión esta tarde?";
+    let hour = new Date().getHours();
+    try {
+      hour = getCdmxTime();
+    } catch (error) {
+      // se usa la hora local
+    }
+    if (hour >= 8 && hour < 13) {
+      mobileCtaText.textContent = "¿Te agendo una sesión hoy?";
+    } else if (hour >= 13 && hour < 20) {
+      mobileCtaText.textContent = "¿Agendamos para esta noche?";
+    } else if (hour >= 20 && hour < 23) {
+      mobileCtaText.textContent = "¿Hay espacio hoy en la noche? Pregunta";
     } else {
       mobileCtaText.textContent = "¿Agendamos tu sesión para mañana?";
     }
@@ -64,6 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Animaciones de aparición (scroll reveal)
   const revealEls = document.querySelectorAll("[data-reveal]");
+  revealEls.forEach((section) => {
+    section.querySelectorAll(".reveal").forEach((el, index) => {
+      el.style.setProperty("--i", String(Math.min(index, 8)));
+    });
+  });
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -74,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0, rootMargin: "0px 0px -12% 0px" }
     );
 
     revealEls.forEach((el) => observer.observe(el));
@@ -134,13 +199,13 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "acupuntura",
       name: "Acupuntura y electroacupuntura",
       tags: ["cabeza", "migraña", "cronico", "dolor_fuerte", "emocional"],
-      description: "Complemento cuando hay migrañas, dolor crónico o se busca un equilibrio más profundo."
+      description: "Complemento del masaje cuando hay tensión acumulada en cabeza y cuello o buscas una relajación más profunda."
     },
     {
       id: "presoterapia",
       name: "Presoterapia",
       tags: ["circulacion", "piernas", "pesadez", "retencion"],
-      description: "Para mala circulación, piernas pesadas, hinchazón y retención de líquidos."
+      description: "Para aliviar la sensación de piernas pesadas y cansadas, sobre todo si pasas muchas horas de pie o sentado."
     }
   ];
 
@@ -167,19 +232,36 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "renacer",
       name: "Masaje Renacer",
       tags: ["cronico", "multiples_zonas", "dolor_fuerte"],
-      description: "Pensado para dolor crónico, varias zonas afectadas o cuando necesitas un proceso de cambio más profundo."
+      description: "Pensado para tensión acumulada en varias zonas o cuando necesitas una sesión más completa."
     }
   ];
 
   // ----- Utilidades de UI -----
-  function addMessage(sender, html) {
+  // Escapa texto del usuario antes de ponerlo dentro de HTML del asistente.
+  function escapeHtml(text) {
+    return String(text)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  // El texto del usuario se inserta como texto plano (nunca como HTML) para evitar XSS.
+  // Solo los mensajes del asistente, que son textos fijos de este archivo, usan HTML.
+  function addMessage(sender, content) {
+    const isUser = sender === "user";
     const wrapper = document.createElement("div");
     wrapper.classList.add("w21-chat-message");
-    wrapper.classList.add(sender === "user" ? "user" : "assistant");
+    wrapper.classList.add(isUser ? "user" : "assistant");
 
     const bubble = document.createElement("div");
     bubble.classList.add("w21-chat-bubble");
-    bubble.innerHTML = html;
+    if (isUser) {
+      bubble.textContent = content;
+    } else {
+      bubble.innerHTML = content;
+    }
 
     wrapper.appendChild(bubble);
     messagesEl.appendChild(wrapper);
@@ -345,7 +427,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // HTML
     let html = "";
-    html += `<p><strong>${userName ? "Gracias por contarme lo que sientes, " + userName : "Gracias por contarme lo que sientes"}.</strong></p>`;
+    html += `<p><strong>${userName ? "Gracias por contarme lo que sientes, " + escapeHtml(userName) : "Gracias por contarme lo que sientes"}.</strong></p>`;
     html += `<p>Con lo que me compartes, estos son los <strong>servicios que mejor combinan para tu caso</strong> en Wellness 21PM:</p>`;
     html += "<ul>";
     combo.forEach(s => {
@@ -424,7 +506,7 @@ document.addEventListener("DOMContentLoaded", () => {
       step = "askSymptoms";
       addMessage(
         "assistant",
-        `<p>Mucho gusto, <strong>${firstName}</strong>.</p>` +
+        `<p>Mucho gusto, <strong>${escapeHtml(firstName)}</strong>.</p>` +
           `<p>Ahora cuéntame con tus palabras <strong>qué sientes o qué te preocupa</strong>: por ejemplo, dolor en cuello, espalda baja, piernas cansadas, mucho estrés, no descansar bien…</p>` +
           `<p>Si quieres, también puedes usar los botones de abajo para contestar más rápido.</p>`
       );

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /gracias.html
 
-Sitemap: https://jess90202.github.io/wellness21pm/sitemap.xml
+Sitemap: https://21pmwellness.dpdns.org/sitemap.xml
