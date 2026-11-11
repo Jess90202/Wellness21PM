@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "renacer",
-      name: "Masaje Renacer",
+      name: "Paquete Renacer",
       tags: ["cronico", "multiples_zonas", "dolor_fuerte"],
       description: "Pensado para tensión acumulada en varias zonas o cuando necesitas una sesión más completa."
     }
